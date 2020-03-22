@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"3cc8203ef431eba2446b01744aaa31f9">
+		["MD5-CAM-1.0.1"] = <"5880d9a473fb3606d11f706582806566">
 		["build_uid"] = <"f5d9b5fe-800a-3339-93d3-a39674e75d53">
 	>
 
@@ -188,6 +188,11 @@ definition
 					}
 					CLUSTER[at0054] occurrences matches {0..1} matches {    -- COVID Risk Score
 						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0124] occurrences matches {0..1} matches {    -- Risk Count
+								value matches {
+									DV_COUNT matches {*}
+								}
+							}
 							ELEMENT[at0055] occurrences matches {0..1} matches {    -- Score
 								value matches {
 									DV_COUNT matches {*}
@@ -548,6 +553,10 @@ ontology
 				>
 				["at0123"] = <
 					text = <"Troponon has been raised">
+					description = <"*">
+				>
+				["at0124"] = <
+					text = <"Risk Count">
 					description = <"*">
 				>
 			>
