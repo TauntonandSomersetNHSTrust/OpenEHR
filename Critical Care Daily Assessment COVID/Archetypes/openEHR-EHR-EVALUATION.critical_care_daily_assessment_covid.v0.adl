@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"f1d9424a72eb3752aa9be47c25c62899">
+		["MD5-CAM-1.0.1"] = <"3cc8203ef431eba2446b01744aaa31f9">
 		["build_uid"] = <"f5d9b5fe-800a-3339-93d3-a39674e75d53">
 	>
 
@@ -142,7 +142,39 @@ definition
 					}
 					CLUSTER[at0051] occurrences matches {0..1} matches {    -- Other dysfunction
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0071] occurrences matches {0..1} matches {    -- Acuity Score
+							ELEMENT[at0102] occurrences matches {0..1} matches {    -- Resp_Dysfunction
+								value matches {
+									0|[local::at0106],
+									1|[local::at0107],
+									2|[local::at0108],
+									3|[local::at0109]
+								}
+							}
+							ELEMENT[at0103] occurrences matches {0..1} matches {    -- CVS_Dysfunction
+								value matches {
+									0|[local::at0110],
+									1|[local::at0111],
+									2|[local::at0112],
+									3|[local::at0113]
+								}
+							}
+							ELEMENT[at0104] occurrences matches {0..1} matches {    -- CNS_Dysfunction
+								value matches {
+									0|[local::at0114],
+									1|[local::at0115],
+									2|[local::at0116],
+									3|[local::at0117]
+								}
+							}
+							ELEMENT[at0105] occurrences matches {0..1} matches {    -- Renal_Dysfunction
+								value matches {
+									0|[local::at0118],
+									1|[local::at0119],
+									2|[local::at0120],
+									3|[local::at0121]
+								}
+							}
+							ELEMENT[at0097] occurrences matches {0..1} matches {    -- Acuity Score
 								value matches {
 									DV_COUNT matches {*}
 								}
@@ -188,24 +220,24 @@ definition
 									DV_BOOLEAN matches {*}
 								}
 							}
-							ELEMENT[at0064] occurrences matches {0..1} matches {    -- Prolonged Lymphopaenia
+							ELEMENT[at0064] occurrences matches {0..1} matches {    -- Lymphopaenia has been <0.8
 								value matches {
 									DV_BOOLEAN matches {*}
 								}
 							}
-							ELEMENT[at0067] occurrences matches {0..1} matches {    -- Platelets <100
+							ELEMENT[at0067] occurrences matches {0..1} matches {    -- Platelets has been <100
 								value matches {
 									DV_BOOLEAN matches {*}
 								}
 							}
-							ELEMENT[at0069] occurrences matches {0..1} matches {    -- Peak CRP
+							ELEMENT[at0122] occurrences matches {0..1} matches {    -- CRP has been >125
 								value matches {
-									DV_COUNT matches {*}
+									DV_BOOLEAN matches {*}
 								}
 							}
-							ELEMENT[at0070] occurrences matches {0..1} matches {    -- Peak Troponin
+							ELEMENT[at0123] occurrences matches {0..1} matches {    -- Troponon has been raised
 								value matches {
-									DV_COUNT matches {*}
+									DV_BOOLEAN matches {*}
 								}
 							}
 						}
@@ -407,23 +439,11 @@ ontology
 					description = <"*">
 				>
 				["at0064"] = <
-					text = <"Prolonged Lymphopaenia">
+					text = <"Lymphopaenia has been <0.8">
 					description = <"*">
 				>
 				["at0067"] = <
-					text = <"Platelets <100">
-					description = <"*">
-				>
-				["at0069"] = <
-					text = <"Peak CRP">
-					description = <"*">
-				>
-				["at0070"] = <
-					text = <"Peak Troponin">
-					description = <"*">
-				>
-				["at0071"] = <
-					text = <"Acuity Score">
+					text = <"Platelets has been <100">
 					description = <"*">
 				>
 				["at0072"] = <
@@ -436,6 +456,98 @@ ontology
 				>
 				["at0074"] = <
 					text = <"Level of Care">
+					description = <"*">
+				>
+				["at0097"] = <
+					text = <"Acuity Score">
+					description = <"*">
+				>
+				["at0102"] = <
+					text = <"Resp_Dysfunction">
+					description = <"*">
+				>
+				["at0103"] = <
+					text = <"CVS_Dysfunction">
+					description = <"*">
+				>
+				["at0104"] = <
+					text = <"CNS_Dysfunction">
+					description = <"*">
+				>
+				["at0105"] = <
+					text = <"Renal_Dysfunction">
+					description = <"*">
+				>
+				["at0106"] = <
+					text = <"No support or nasal spec.">
+					description = <"*">
+				>
+				["at0107"] = <
+					text = <"Venturi <60%">
+					description = <"*">
+				>
+				["at0108"] = <
+					text = <"NIV / Highflow nasal prongs / Venturi 60%">
+					description = <"*">
+				>
+				["at0109"] = <
+					text = <"Intubated and ventilated">
+					description = <"*">
+				>
+				["at0110"] = <
+					text = <"No support">
+					description = <"*">
+				>
+				["at0111"] = <
+					text = <"Metaraminol or Noradrenaline <= 5ml/hr">
+					description = <"*">
+				>
+				["at0112"] = <
+					text = <"Noradrenaline >= 5ml/hr">
+					description = <"*">
+				>
+				["at0113"] = <
+					text = <"High dose inotropes (Norad double strength or >= 2 inotropes)">
+					description = <"*">
+				>
+				["at0114"] = <
+					text = <"Alert, comfortable">
+					description = <"*">
+				>
+				["at0115"] = <
+					text = <"CAM-ICU +ve or Pain">
+					description = <"*">
+				>
+				["at0116"] = <
+					text = <"Agitated or drowsy">
+					description = <"*">
+				>
+				["at0117"] = <
+					text = <"Unconscious">
+					description = <"*">
+				>
+				["at0118"] = <
+					text = <"No support / concern">
+					description = <"*">
+				>
+				["at0119"] = <
+					text = <"Kidneys at risk / Difficult fluid balance">
+					description = <"*">
+				>
+				["at0120"] = <
+					text = <"Worsening U+E’s / Oliguric / Strict fluid balance">
+					description = <"*">
+				>
+				["at0121"] = <
+					text = <"RRT">
+					description = <"*">
+				>
+				["at0122"] = <
+					text = <"CRP has been >125">
+					description = <"*">
+				>
+				["at0123"] = <
+					text = <"Troponon has been raised">
 					description = <"*">
 				>
 			>
