@@ -1,0 +1,98 @@
+archetype (adl_version=1.4; uid=8bb923c9-737a-4081-a9f1-26813ef3c9c1)
+	openEHR-EHR-EVALUATION.covid19_ward_patient_checklist.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2020-03-26">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"e5aaf195c9d3ad2cb80015f0e89a46e2">
+		["build_uid"] = <"bcc6d5bf-03ad-3720-bf72-a7b32effcdc8">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- COVID19 Ward Patient Checklist
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0004] matches {    -- VTE Assessment Completed
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0005] matches {    -- TEP Assesssment Completed
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					CLUSTER[at0006] occurrences matches {0..1} matches {    -- Treatment Escalation
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0007] occurrences matches {0..1} matches {    -- For escalation to ITU/HDU
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0008] occurrences matches {0..1} matches {    -- For resuscitation
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"COVID19 Ward Patient Checklist">
+					description = <"COVID19 Ward Patient Checklist">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"VTE Assessment Completed">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"TEP Assesssment Completed">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Treatment Escalation">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"For escalation to ITU/HDU">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"For resuscitation">
+					description = <"*">
+				>
+			>
+		>
+	>

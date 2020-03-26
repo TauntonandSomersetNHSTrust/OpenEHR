@@ -1,0 +1,241 @@
+archetype (adl_version=1.4; uid=d96b59e7-4cfa-4db1-a9e7-cc3a4e8303e2)
+	openEHR-EHR-EVALUATION.patient_flag.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2020-03-25">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"150c9ccca09749b621800febd27e5dcb">
+		["build_uid"] = <"381ce908-d038-3bd3-a047-09108fa60bc1">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Patient Flag
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Source
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					CLUSTER[at0004] occurrences matches {0..1} matches {    -- Flag Details
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0005] occurrences matches {0..1} matches {    -- Text
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0006] occurrences matches {0..1} matches {    -- Description
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0007] occurrences matches {0..1} matches {    -- Coded Value
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0015] occurrences matches {0..1} matches {    -- Category
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0016,    -- Diet
+											at0017,    -- Drug
+											at0018,    -- Lab
+											at0019,    -- Administrative
+											at0020,    -- Subject Contact
+											at0021,    -- Clinical
+											at0022,    -- Behavioral
+											at0023,    -- Research
+											at0024,    -- Advance Directive
+											at0025]    -- Safety
+										}
+									}
+								}
+							}
+							ELEMENT[at0013] matches {    -- Severity
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0026,    -- Critical
+											at0027,    -- Warning
+											at0028]    -- Information
+										}
+									}
+								}
+							}
+							ELEMENT[at0008] matches {    -- Valid From
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0009] occurrences matches {0..1} matches {    -- Valid To
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0010] matches {    -- Recorded By
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0011] occurrences matches {0..1} matches {    -- Removed By
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0012] occurrences matches {0..1} matches {    -- Active
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0014] matches {*}    -- Item tree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Patient Flag">
+					description = <"Patient Flag">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Source">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Flag Details">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Text">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Description">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Coded Value">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Valid From">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Valid To">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Recorded By">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Removed By">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Active">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Severity">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0015"] = <
+					text = <"Category">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Diet">
+					description = <"Flags related to the subject's dietary needs.">
+				>
+				["at0017"] = <
+					text = <"Drug">
+					description = <"Flags related to the subject's medications.">
+				>
+				["at0018"] = <
+					text = <"Lab">
+					description = <"Flags related to performing laboratory tests and related processes (e.g. phlebotomy).">
+				>
+				["at0019"] = <
+					text = <"Administrative">
+					description = <"Flags related to administrative and financial processes.">
+				>
+				["at0020"] = <
+					text = <"Subject Contact">
+					description = <"Flags related to coming into contact with the patient.">
+				>
+				["at0021"] = <
+					text = <"Clinical">
+					description = <"Flags related to the subject's clinical data.">
+				>
+				["at0022"] = <
+					text = <"Behavioral">
+					description = <"Flags related to behavior.">
+				>
+				["at0023"] = <
+					text = <"Research">
+					description = <"Flags related to research.">
+				>
+				["at0024"] = <
+					text = <"Advance Directive">
+					description = <"Flags related to subject's advance directives.">
+				>
+				["at0025"] = <
+					text = <"Safety">
+					description = <"Flags related to safety precautions.">
+				>
+				["at0026"] = <
+					text = <"Critical">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Warning">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Information">
+					description = <"*">
+				>
+			>
+		>
+	>
