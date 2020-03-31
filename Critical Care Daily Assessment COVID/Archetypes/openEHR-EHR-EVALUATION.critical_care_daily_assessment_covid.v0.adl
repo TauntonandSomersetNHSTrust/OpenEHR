@@ -23,8 +23,9 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"5880d9a473fb3606d11f706582806566">
+		["MD5-CAM-1.0.1"] = <"90a5ddc5fd21da3eda37ffeae69e4eda">
 		["build_uid"] = <"f5d9b5fe-800a-3339-93d3-a39674e75d53">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 	>
 
 definition
@@ -59,7 +60,12 @@ definition
 					}
 					CLUSTER[at0006] occurrences matches {0..1} matches {    -- Respiratory
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0007] occurrences matches {0..1} matches {    -- First intubation date
+							ELEMENT[at0137] occurrences matches {0..1} matches {    -- First intubation date
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0155] occurrences matches {0..1} matches {    -- Extubation date
 								value matches {
 									DV_DATE_TIME matches {*}
 								}
@@ -133,9 +139,15 @@ definition
 									>
 								}
 							}
-							ELEMENT[at0045] occurrences matches {0..1} matches {    -- Suitable for re-intubation
+							ELEMENT[at0156] occurrences matches {0..1} matches {    -- Suitable for re-intubation
 								value matches {
-									DV_BOOLEAN matches {*}
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0157,    -- Patient Is Suitable For Re-Intubation
+											at0158]    -- Patient Is Not Suitable For Re-Intubation
+										}
+									}
 								}
 							}
 						}
@@ -181,7 +193,14 @@ definition
 							}
 							ELEMENT[at0072] occurrences matches {0..1} matches {    -- Fluid balance at 08:00
 								value matches {
-									DV_COUNT matches {*}
+									C_DV_QUANTITY <
+										property = <[openehr::129]>
+										list = <
+											["1"] = <
+												units = <"ml">
+											>
+										>
+									>
 								}
 							}
 						}
@@ -225,7 +244,7 @@ definition
 									DV_BOOLEAN matches {*}
 								}
 							}
-							ELEMENT[at0064] occurrences matches {0..1} matches {    -- Lymphopaenia has been <0.8
+							ELEMENT[at0064] occurrences matches {0..1} matches {    -- Lymphocyte has been <0.8
 								value matches {
 									DV_BOOLEAN matches {*}
 								}
@@ -240,9 +259,118 @@ definition
 									DV_BOOLEAN matches {*}
 								}
 							}
-							ELEMENT[at0123] occurrences matches {0..1} matches {    -- Troponon has been raised
+							ELEMENT[at0123] occurrences matches {0..1} matches {    -- Troponin has been raised
 								value matches {
 									DV_BOOLEAN matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0126] occurrences matches {0..1} matches {    -- CHESS Data
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0128] occurrences matches {0..*} matches {    -- Other Viruses Detected
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							CLUSTER[at0130] occurrences matches {0..1} matches {    -- Complications During Admission
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0131] occurrences matches {0..*} matches {    -- Conditions
+										value matches {
+											DV_CODED_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0132] occurrences matches {0..1} matches {    -- Other Co-Infection
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0133] occurrences matches {0..1} matches {    -- Other Complications
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0134] occurrences matches {0..1} matches {    -- Secondary Bacterial Pneumonia Organism
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0135] occurrences matches {0..1} matches {    -- Organism
+										value matches {
+											DV_CODED_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0136] occurrences matches {0..1} matches {    -- Other Organism
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0138] occurrences matches {0..*} matches {    -- Risk Factors And Underlying Conditions
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0139] occurrences matches {0..1} matches {    -- Condition
+										value matches {
+											DV_CODED_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0140] occurrences matches {0..1} matches {    -- Individual Condition Details
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0141] occurrences matches {0..1} matches {    -- Other Condition
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							ELEMENT[at0144] occurrences matches {0..1} matches {    -- Obesity
+								value matches {
+									1|[local::at0159],
+									2|[local::at0160],
+									3|[local::at0161],
+									4|[local::at0162],
+									5|[local::at0163],
+									6|[local::at0164]
+								}
+							}
+							CLUSTER[at0145] occurrences matches {0..1} matches {    -- Other Information About Patient
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0146] occurrences matches {0..1} matches {    -- Pregnant
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0147] occurrences matches {0..1} matches {    -- Health Care Worker
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0148] occurrences matches {0..1} matches {    -- Travel In 14 Days Before Onset
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0150] occurrences matches {0..1} matches {    -- Contact With Confirmed Case In 14 Days Before Onset
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0151] occurrences matches {0..1} matches {    -- Died On Unit?
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0152] occurrences matches {0..1} matches {    -- Patient Deceased?
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0154] occurrences matches {0..1} matches {    -- How Did COVID-19 Relate To The Cause Of Death?
+										value matches {
+											DV_CODED_TEXT matches {*}
+										}
+									}
 								}
 							}
 						}
@@ -281,10 +409,6 @@ ontology
 				>
 				["at0006"] = <
 					text = <"Respiratory">
-					description = <"*">
-				>
-				["at0007"] = <
-					text = <"First intubation date">
 					description = <"*">
 				>
 				["at0009"] = <
@@ -407,10 +531,6 @@ ontology
 					text = <"Ppeak (cmH2O)">
 					description = <"*">
 				>
-				["at0045"] = <
-					text = <"Suitable for re-intubation">
-					description = <"*">
-				>
 				["at0048"] = <
 					text = <"Resuscitation Status">
 					description = <"*">
@@ -444,7 +564,7 @@ ontology
 					description = <"*">
 				>
 				["at0064"] = <
-					text = <"Lymphopaenia has been <0.8">
+					text = <"Lymphocyte has been <0.8">
 					description = <"*">
 				>
 				["at0067"] = <
@@ -552,11 +672,143 @@ ontology
 					description = <"*">
 				>
 				["at0123"] = <
-					text = <"Troponon has been raised">
+					text = <"Troponin has been raised">
 					description = <"*">
 				>
 				["at0124"] = <
 					text = <"Risk Count">
+					description = <"*">
+				>
+				["at0126"] = <
+					text = <"CHESS Data">
+					description = <"*">
+				>
+				["at0128"] = <
+					text = <"Other Viruses Detected">
+					description = <"*">
+				>
+				["at0130"] = <
+					text = <"Complications During Admission">
+					description = <"*">
+				>
+				["at0131"] = <
+					text = <"Conditions">
+					description = <"*">
+				>
+				["at0132"] = <
+					text = <"Other Co-Infection">
+					description = <"*">
+				>
+				["at0133"] = <
+					text = <"Other Complications">
+					description = <"*">
+				>
+				["at0134"] = <
+					text = <"Secondary Bacterial Pneumonia Organism">
+					description = <"*">
+				>
+				["at0135"] = <
+					text = <"Organism">
+					description = <"*">
+				>
+				["at0136"] = <
+					text = <"Other Organism">
+					description = <"*">
+				>
+				["at0137"] = <
+					text = <"First intubation date">
+					description = <"*">
+				>
+				["at0138"] = <
+					text = <"Risk Factors And Underlying Conditions">
+					description = <"*">
+				>
+				["at0139"] = <
+					text = <"Condition">
+					description = <"*">
+				>
+				["at0140"] = <
+					text = <"Individual Condition Details">
+					description = <"*">
+				>
+				["at0141"] = <
+					text = <"Other Condition">
+					description = <"*">
+				>
+				["at0144"] = <
+					text = <"Obesity">
+					description = <"*">
+				>
+				["at0145"] = <
+					text = <"Other Information About Patient">
+					description = <"*">
+				>
+				["at0146"] = <
+					text = <"Pregnant">
+					description = <"*">
+				>
+				["at0147"] = <
+					text = <"Health Care Worker">
+					description = <"*">
+				>
+				["at0148"] = <
+					text = <"Travel In 14 Days Before Onset">
+					description = <"*">
+				>
+				["at0150"] = <
+					text = <"Contact With Confirmed Case In 14 Days Before Onset">
+					description = <"*">
+				>
+				["at0151"] = <
+					text = <"Died On Unit?">
+					description = <"*">
+				>
+				["at0152"] = <
+					text = <"Patient Deceased?">
+					description = <"*">
+				>
+				["at0154"] = <
+					text = <"How Did COVID-19 Relate To The Cause Of Death?">
+					description = <"*">
+				>
+				["at0155"] = <
+					text = <"Extubation date">
+					description = <"*">
+				>
+				["at0156"] = <
+					text = <"Suitable for re-intubation">
+					description = <"*">
+				>
+				["at0157"] = <
+					text = <"Patient Is Suitable For Re-Intubation">
+					description = <"*">
+				>
+				["at0158"] = <
+					text = <"Patient Is Not Suitable For Re-Intubation">
+					description = <"*">
+				>
+				["at0159"] = <
+					text = <"Clinically Evident">
+					description = <"*">
+				>
+				["at0160"] = <
+					text = <"<18.5">
+					description = <"*">
+				>
+				["at0161"] = <
+					text = <"18.5-24.9">
+					description = <"*">
+				>
+				["at0162"] = <
+					text = <"25-29.9">
+					description = <"*">
+				>
+				["at0163"] = <
+					text = <"30-39.9">
+					description = <"*">
+				>
+				["at0164"] = <
+					text = <">=40">
 					description = <"*">
 				>
 			>

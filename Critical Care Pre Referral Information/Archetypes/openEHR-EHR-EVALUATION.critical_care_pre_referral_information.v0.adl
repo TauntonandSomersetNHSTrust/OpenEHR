@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"b6cec80d0aa43f722d40e647cc1153cc">
+		["MD5-CAM-1.0.1"] = <"cfb7841c424176176c5255475c4e711d">
 		["build_uid"] = <"cfd7a79e-289a-32e6-83eb-a87087abe39d">
 	>
 
@@ -120,7 +120,7 @@ definition
 									DV_BOOLEAN matches {*}
 								}
 							}
-							ELEMENT[at0016] occurrences matches {0..1} matches {    -- Happy to be less independent?
+							ELEMENT[at0016] occurrences matches {0..1} matches {    -- Willing to be less independent?
 								value matches {
 									DV_BOOLEAN matches {*}
 								}
@@ -137,9 +137,9 @@ definition
 							}
 						}
 					}
-					CLUSTER[at0019] occurrences matches {0..1} matches {    -- Co-morbidities
+					CLUSTER[at0019] occurrences matches {0..*} matches {    -- Co-morbidities
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0020] occurrences matches {0..*} matches {    -- Co-morbidities
+							ELEMENT[at0020] occurrences matches {0..1} matches {    -- Co-morbidities
 								value matches {
 									DV_CODED_TEXT matches {*}
 								}
@@ -149,12 +149,39 @@ definition
 									DV_TEXT matches {*}
 								}
 							}
-							CLUSTER[at0067] occurrences matches {0..1} matches {    -- Mycocardial Infarction
+							CLUSTER[at0067] occurrences matches {0..1} matches {    -- Myocardial Infarction
 								items cardinality matches {1..*; unordered} matches {
-									ELEMENT[at0058] occurrences matches {0..1} matches {    -- Myocardial infarction occured
+									ELEMENT[at0058] occurrences matches {0..1} matches {    -- Myocardial infarction occurred
 										value matches {
 											1|[local::at0059],
 											2|[local::at0060]
+										}
+									}
+									ELEMENT[at0095] occurrences matches {0..1} matches {    -- Recent angina
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0096] occurrences matches {0..1} matches {    -- Cardiac Dysfunction
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0101] occurrences matches {0..1} matches {    -- Most Recent Known EF
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::380]>
+												list = <
+													["1"] = <
+														units = <"%">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0102] occurrences matches {0..1} matches {    -- Other Significant Structural Or Functional Problems
+										value matches {
+											DV_TEXT matches {*}
 										}
 									}
 								}
@@ -163,16 +190,19 @@ definition
 								items cardinality matches {1..*; unordered} matches {
 									ELEMENT[at0061] occurrences matches {0..1} matches {    -- Cerebrovascular details
 										value matches {
-											DV_ORDINAL matches {*}
+											1|[local::at0083],
+											2|[local::at0084],
+											3|[local::at0085],
+											4|[local::at0086]
 										}
 									}
 								}
 							}
 							CLUSTER[at0071] occurrences matches {0..1} matches {    -- Chronic Respiratory Disease
 								items cardinality matches {1..*; unordered} matches {
-									ELEMENT[at0062] occurrences matches {0..1} matches {    -- Chronic Respiratory Disease details
+									ELEMENT[at0087] occurrences matches {0..1} matches {    -- Chronic Respiratory Disease type
 										value matches {
-											DV_ORDINAL matches {*}
+											DV_CODED_TEXT matches {*}
 										}
 									}
 									ELEMENT[at0064] occurrences matches {0..1} matches {    -- Chronic Respiratory Other
@@ -182,21 +212,31 @@ definition
 									}
 									ELEMENT[at0065] occurrences matches {0..1} matches {    -- Chronic Respiratory Disease Severity
 										value matches {
-											DV_ORDINAL matches {*}
+											1|[local::at0088],
+											2|[local::at0089],
+											3|[local::at0090]
 										}
 									}
 								}
 							}
 							CLUSTER[at0074] occurrences matches {0..1} matches {    -- Chronic Kidney Disease
 								items cardinality matches {1..*; unordered} matches {
-									ELEMENT[at0066] occurrences matches {0..1} matches {    -- Chronic Kidney Disease Details Stage
-										value matches {
-											DV_TEXT matches {*}
-										}
-									}
 									ELEMENT[at0063] occurrences matches {0..1} matches {    -- Chronic Kidney Disease Details
 										value matches {
-											DV_ORDINAL matches {*}
+											1|[local::at0091],
+											2|[local::at0092],
+											3|[local::at0093],
+											4|[local::at0094]
+										}
+									}
+									ELEMENT[at0103] occurrences matches {0..1} matches {    -- Chronic Kidney Disease Details Stage
+										value matches {
+											1|[local::at0104],
+											2|[local::at0105],
+											3|[local::at0106],
+											4|[local::at0107],
+											5|[local::at0108],
+											6|[local::at0109]
 										}
 									}
 								}
@@ -208,14 +248,14 @@ definition
 											DV_BOOLEAN matches {*}
 										}
 									}
-									ELEMENT[at0081] occurrences matches {0..1} matches {    -- Child-Pugh score
+									ELEMENT[at0110] occurrences matches {0..1} matches {    -- Child-Pugh score
 										value matches {
-											DV_QUANTITY matches {*}
+											DV_COUNT matches {*}
 										}
 									}
-									ELEMENT[at0082] occurrences matches {0..1} matches {    -- MELD score
+									ELEMENT[at0111] occurrences matches {0..1} matches {    -- MELD score
 										value matches {
-											DV_QUANTITY matches {*}
+											DV_COUNT matches {*}
 										}
 									}
 								}
@@ -301,7 +341,7 @@ ontology
 					description = <"*">
 				>
 				["at0016"] = <
-					text = <"Happy to be less independent?">
+					text = <"Willing to be less independent?">
 					description = <"*">
 				>
 				["at0017"] = <
@@ -465,7 +505,7 @@ ontology
 					description = <"*">
 				>
 				["at0058"] = <
-					text = <"Myocardial infarction occured">
+					text = <"Myocardial infarction occurred">
 					description = <"*">
 				>
 				["at0059"] = <
@@ -480,10 +520,6 @@ ontology
 					text = <"Cerebrovascular details">
 					description = <"*">
 				>
-				["at0062"] = <
-					text = <"Chronic Respiratory Disease details">
-					description = <"*">
-				>
 				["at0063"] = <
 					text = <"Chronic Kidney Disease Details">
 					description = <"*">
@@ -496,12 +532,8 @@ ontology
 					text = <"Chronic Respiratory Disease Severity">
 					description = <"*">
 				>
-				["at0066"] = <
-					text = <"Chronic Kidney Disease Details Stage">
-					description = <"*">
-				>
 				["at0067"] = <
-					text = <"Mycocardial Infarction">
+					text = <"Myocardial Infarction">
 					description = <"*">
 				>
 				["at0071"] = <
@@ -532,11 +564,107 @@ ontology
 					text = <"Alcohol Related">
 					description = <"*">
 				>
-				["at0081"] = <
+				["at0083"] = <
+					text = <"Single TIA">
+					description = <"*">
+				>
+				["at0084"] = <
+					text = <"Multiple TIAs">
+					description = <"*">
+				>
+				["at0085"] = <
+					text = <"CVE with resolved impairment">
+					description = <"*">
+				>
+				["at0086"] = <
+					text = <"CVE with residual impairment">
+					description = <"*">
+				>
+				["at0087"] = <
+					text = <"Chronic Respiratory Disease type">
+					description = <"*">
+				>
+				["at0088"] = <
+					text = <"Mild">
+					description = <"*">
+				>
+				["at0089"] = <
+					text = <"Moderate">
+					description = <"*">
+				>
+				["at0090"] = <
+					text = <"Severe">
+					description = <"*">
+				>
+				["at0091"] = <
+					text = <"Improving">
+					description = <"*">
+				>
+				["at0092"] = <
+					text = <"Stable">
+					description = <"*">
+				>
+				["at0093"] = <
+					text = <"Deteriorating">
+					description = <"*">
+				>
+				["at0094"] = <
+					text = <"Dialysis being considered">
+					description = <"*">
+				>
+				["at0095"] = <
+					text = <"Recent angina">
+					description = <"*">
+				>
+				["at0096"] = <
+					text = <"Cardiac Dysfunction">
+					description = <"*">
+				>
+				["at0101"] = <
+					text = <"Most Recent Known EF">
+					description = <"*">
+				>
+				["%"] = <
+					text = <"%">
+					description = <"%">
+				>
+				["at0102"] = <
+					text = <"Other Significant Structural Or Functional Problems">
+					description = <"*">
+				>
+				["at0103"] = <
+					text = <"Chronic Kidney Disease Details Stage">
+					description = <"*">
+				>
+				["at0104"] = <
+					text = <"Stage 1 CKD">
+					description = <"*">
+				>
+				["at0105"] = <
+					text = <"Stage 2 CKD">
+					description = <"*">
+				>
+				["at0106"] = <
+					text = <"Stage 3A CKD">
+					description = <"*">
+				>
+				["at0107"] = <
+					text = <"Stage 3B CKD">
+					description = <"*">
+				>
+				["at0108"] = <
+					text = <"Stage 4 CKD">
+					description = <"*">
+				>
+				["at0109"] = <
+					text = <"Stage 5 CKD">
+					description = <"*">
+				>
+				["at0110"] = <
 					text = <"Child-Pugh score">
 					description = <"*">
 				>
-				["at0082"] = <
+				["at0111"] = <
 					text = <"MELD score">
 					description = <"*">
 				>
