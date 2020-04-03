@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"cfb7841c424176176c5255475c4e711d">
+		["MD5-CAM-1.0.1"] = <"0429df722c0aa13f7d7ae8a7ca8b8142">
 		["build_uid"] = <"cfd7a79e-289a-32e6-83eb-a87087abe39d">
 	>
 
@@ -68,7 +68,7 @@ definition
 									4|[local::at0038]
 								}
 							}
-							ELEMENT[at0007] matches {    -- Assisstance at Home
+							ELEMENT[at0007] matches {    -- Assistance at Home
 								value matches {
 									1|[local::at0039],
 									2|[local::at0040],
@@ -137,9 +137,9 @@ definition
 							}
 						}
 					}
-					CLUSTER[at0019] occurrences matches {0..*} matches {    -- Co-morbidities
+					CLUSTER[at0019] occurrences matches {0..1} matches {    -- Co-morbidities
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0020] occurrences matches {0..1} matches {    -- Co-morbidities
+							ELEMENT[at0020] occurrences matches {0..*} matches {    -- Co-morbidities
 								value matches {
 									DV_CODED_TEXT matches {*}
 								}
@@ -309,7 +309,7 @@ ontology
 					description = <"*">
 				>
 				["at0007"] = <
-					text = <"Assisstance at Home">
+					text = <"Assistance at Home">
 					description = <"*">
 				>
 				["at0008"] = <
