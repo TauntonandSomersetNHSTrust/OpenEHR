@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"90a5ddc5fd21da3eda37ffeae69e4eda">
+		["MD5-CAM-1.0.1"] = <"8818b07a3f1460e3cf8d94909533a52b">
 		["build_uid"] = <"f5d9b5fe-800a-3339-93d3-a39674e75d53">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 	>
@@ -43,7 +43,7 @@ definition
 							DV_DATE_TIME matches {*}
 						}
 					}
-					ELEMENT[at0073] occurrences matches {0..1} matches {    -- Symptom Onset Date
+					ELEMENT[at0073] occurrences matches {0..1} matches {    -- COVID Symptom Onset Date
 						value matches {
 							DV_DATE_TIME matches {*}
 						}
@@ -159,7 +159,8 @@ definition
 									0|[local::at0106],
 									1|[local::at0107],
 									2|[local::at0108],
-									3|[local::at0109]
+									3|[local::at0109],
+									4|[local::at0165]
 								}
 							}
 							ELEMENT[at0103] occurrences matches {0..1} matches {    -- CVS_Dysfunction
@@ -576,7 +577,7 @@ ontology
 					description = <"*">
 				>
 				["at0073"] = <
-					text = <"Symptom Onset Date">
+					text = <"COVID Symptom Onset Date">
 					description = <"*">
 				>
 				["at0074"] = <
@@ -612,11 +613,11 @@ ontology
 					description = <"*">
 				>
 				["at0108"] = <
-					text = <"NIV / Highflow nasal prongs / Venturi 60%">
+					text = <"Venturi 60% or NRB Mask">
 					description = <"*">
 				>
 				["at0109"] = <
-					text = <"Intubated and ventilated">
+					text = <"CPAP or NIV">
 					description = <"*">
 				>
 				["at0110"] = <
@@ -809,6 +810,10 @@ ontology
 				>
 				["at0164"] = <
 					text = <">=40">
+					description = <"*">
+				>
+				["at0165"] = <
+					text = <"Intubated">
 					description = <"*">
 				>
 			>

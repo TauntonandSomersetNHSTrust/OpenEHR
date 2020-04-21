@@ -1,0 +1,313 @@
+archetype (adl_version=1.4; uid=3a63dbdb-9c17-4a1d-a1e6-0cf014717599)
+	openEHR-EHR-EVALUATION.suspected_covid19_assessment.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2020-04-01">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"7833594c70a1d0b327273e4b26fb725b">
+		["build_uid"] = <"a9626307-bac2-3054-85dd-34b77ecd1a93">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Suspected COVID19 Assessment
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] matches {    -- Asessment Date
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					CLUSTER[at0003] occurrences matches {0..1} matches {    -- Symptoms
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0004] matches {    -- First Symptom Onset
+								value matches {
+									DV_DATE matches {*}
+								}
+							}
+							CLUSTER[at0006] occurrences matches {0..*} matches {    -- Symptom
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0008] matches {    -- Symptom
+										value matches {
+											DV_CODED_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0007] matches {    -- Symptom Status
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0009,    -- Yes
+													at0010,    -- No
+													at0011]    -- Unknown
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					CLUSTER[at0005] occurrences matches {0..1} matches {    -- History Review
+						items cardinality matches {1..*; unordered} matches {
+							CLUSTER[at0023] occurrences matches {0..*} matches {    -- History Factor
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0024] matches {    -- Factor
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0019] matches {    -- Status
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0025,    -- Yes
+													at0026,    -- No
+													at0027,    -- Not Known
+													at0028]    -- Not Applicable
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					CLUSTER[at0029] occurrences matches {0..1} matches {    -- Travel Review
+						items cardinality matches {1..*; unordered} matches {
+							CLUSTER[at0038] occurrences matches {0..*} matches {    -- Travel Detail
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0039] occurrences matches {0..1} matches {    -- Country
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0041] occurrences matches {0..1} matches {    -- Geographic Area
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0043] occurrences matches {0..1} matches {    -- Return Date
+										value matches {
+											DV_DATE matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+					CLUSTER[at0030] occurrences matches {0..1} matches {    -- Animal Exposure Review
+						items cardinality matches {1..*; unordered} matches {
+							CLUSTER[at0032] occurrences matches {0..*} matches {    -- Exposure Detail
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0033] occurrences matches {0..1} matches {    -- Exposure Detail
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0034] occurrences matches {0..1} matches {    -- Contact Status
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0035,    -- Yes
+													at0036,    -- No
+													at0037]    -- N/A
+												}
+											}
+										}
+									}
+									ELEMENT[at0044] occurrences matches {0..1} matches {    -- Contact Date
+										value matches {
+											DV_DATE matches {*}
+										}
+									}
+									ELEMENT[at0045] occurrences matches {0..1} matches {    -- Contact Type
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0046] occurrences matches {0..1} matches {    -- Comments
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0031] matches {*}    -- Item tree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Suspected COVID19 Assessment">
+					description = <"Suspected COVID19 Assessment">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Asessment Date">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Symptoms">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"First Symptom Onset">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"History Review">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Symptom">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Symptom Status">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Symptom">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Unknown">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Status">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"History Factor">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Factor">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Not Known">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Not Applicable">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Travel Review">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Animal Exposure Review">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0032"] = <
+					text = <"Exposure Detail">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Exposure Detail">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Contact Status">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"N/A">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Travel Detail">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Country">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Geographic Area">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Return Date">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Contact Date">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Contact Type">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Comments">
+					description = <"*">
+				>
+			>
+		>
+	>
