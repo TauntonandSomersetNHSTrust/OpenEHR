@@ -1,0 +1,1990 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="moving_and_handling_assessment_and_care_plan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="context">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="encounter_context" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="encounter_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_type" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_reason" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="appointment_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="xds_metadata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="author_specialty" minOccurs="0" type="xs:string" />
+                    <xs:element name="class_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="document_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="confidentiality_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="health_care_facility_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="practice_setting_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="event_code" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="document_media" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="uri" type="xs:string" />
+                          <xs:element name="mediatype" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="document_metadata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="document_status" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0002::Approved" />
+                          <xs:enumeration value="at0003::Draft" />
+                          <xs:enumeration value="at0004::Recorded In Error" />
+                          <xs:enumeration value="at0005::Final" />
+                          <xs:enumeration value="at0008::Superseeded" />
+                          <xs:enumeration value="at0009::Archived" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="document_tags" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="tag_name" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="document_references" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="reference" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="reference" minOccurs="0" type="xs:string" />
+                                <xs:element name="type" minOccurs="0" type="xs:string" />
+                                <xs:element name="identifier" minOccurs="0" type="xs:string" />
+                                <xs:element name="display_text" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="start_time" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="setting" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="openehr::225::home" />
+                    <xs:enumeration value="openehr::227::emergency care" />
+                    <xs:enumeration value="openehr::228::primary medical care" />
+                    <xs:enumeration value="openehr::229::primary nursing care" />
+                    <xs:enumeration value="openehr::230::primary allied health care" />
+                    <xs:enumeration value="openehr::231::midwifery care" />
+                    <xs:enumeration value="openehr::232::secondary medical care" />
+                    <xs:enumeration value="openehr::233::secondary nursing care" />
+                    <xs:enumeration value="openehr::234::secondary allied health care" />
+                    <xs:enumeration value="openehr::235::complementary health care" />
+                    <xs:enumeration value="openehr::236::dental care" />
+                    <xs:enumeration value="openehr::237::nursing home care" />
+                    <xs:enumeration value="openehr::238::other care" />
+                    <xs:enumeration value="openehr::435::laboratory" />
+                    <xs:enumeration value="openehr::436::imaging" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="patient_handling_assessment" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="assessment_date" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="assessment_comment" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+              <xs:element name="usual_mobility" minOccurs="0" type="xs:string" />
+              <xs:element name="height_estimate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="at0061::Tall" />
+                    <xs:enumeration value="at0062::Medium" />
+                    <xs:enumeration value="at0063::Short" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mobility_balance_issues" minOccurs="0" type="xs:boolean" />
+              <xs:element name="mobility_balance_issues_comment" minOccurs="0" type="xs:string" />
+              <xs:element name="communication_issues" minOccurs="0" type="xs:boolean" />
+              <xs:element name="communication_issues_comment" minOccurs="0" type="xs:string" />
+              <xs:element name="visual_or_physical_impairment" minOccurs="0" type="xs:boolean" />
+              <xs:element name="visual_or_physical_impairment_comment" minOccurs="0" type="xs:string" />
+              <xs:element name="confused_agitated_memory_limitations_impaired_judgement" minOccurs="0" type="xs:boolean" />
+              <xs:element name="confused_agitated_memory_limitations_impaired_judgement_comment" minOccurs="0" type="xs:string" />
+              <xs:element name="major_surgery_trauma_wounds" minOccurs="0" type="xs:boolean" />
+              <xs:element name="major_surgery_trauma_wounds_comment" minOccurs="0" type="xs:string" />
+              <xs:element name="medical_condition_affecting_mobility" minOccurs="0" type="xs:boolean" />
+              <xs:element name="medical_condition_affecting_mobility_comment" minOccurs="0" type="xs:string" />
+              <xs:element name="medication_affecting_mobility" minOccurs="0" type="xs:boolean" />
+              <xs:element name="medication_affecting_mobility_comment" minOccurs="0" type="xs:string" />
+              <xs:element name="medical_equipment_attachments" minOccurs="0" type="xs:boolean" />
+              <xs:element name="medical_equipment_attachments_comment" minOccurs="0" type="xs:string" />
+              <xs:element name="other_issues" minOccurs="0" type="xs:string" />
+              <xs:element name="fully_independent" minOccurs="0" type="xs:boolean" />
+              <xs:element name="risk_level" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="at0016::High" />
+                    <xs:enumeration value="at0017::Medium" />
+                    <xs:enumeration value="at0018::Low" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="individual_plan" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="moving_and_handling_task_-_moving_up_or_down_the_bed" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="task_name" minOccurs="0" type="xs:string" />
+                          <xs:element name="capability" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0045::Independent" />
+                                <xs:enumeration value="at0046::Supervision" />
+                                <xs:enumeration value="at0047::Assistance" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="handling_techniques" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="verbal_instruction" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="verbal_instruction_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="tube_slide_sheet_with_bed_hand_blocks" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="tube_slide_sheet_with_bed_hand_blocks_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="supine_slide" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="supine_slide_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="reposition_with_hoist" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="reposition_with_hoist_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="specifics_to_support_individual_care" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="equipment_requirements" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="none" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="none_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="tube_slide_sheet" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="tube_slide_sheet_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="hand_blocks" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="hand_blocks_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="a2_flat_slide_sheets" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="a2_flat_slide_sheets_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="repositioning_sheet" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="repositioning_sheet_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="hoist_sling" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="hoist_sling_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="in_bed_system" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="in_bed_system_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="number_of_staff_required" minOccurs="0" type="xs:int" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="moving_and_handling_task_-_rolling_or_turning_in_bed" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="task_name" minOccurs="0" type="xs:string" />
+                          <xs:element name="capability" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0045::Independent" />
+                                <xs:enumeration value="at0046::Supervision" />
+                                <xs:enumeration value="at0047::Assistance" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="handling_techniques" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="verbal_instruction" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="verbal_instruction_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="manual_standard_roll" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="manual_standard_roll_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="slide_sheet_turn" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="slide_sheet_turn_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="reposition_with_hoist" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="reposition_with_hoist_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="reposition_using_bed_functions" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="reposition_using_bed_functions_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="log_roll_with_head_hold" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="log_roll_with_head_hold_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="log_roll_without_head_hold" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="log_roll_without_head_hold_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="specifics_to_support_individual_care" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="equipment_requirements" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="bed_rail" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="bed_rail_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="a2_flat_slide_sheets" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="a2_flat_slide_sheets_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="repositioning_sheet" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="repositioning_sheet_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="turner_sling" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="turner_sling_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="turning_bed_mattress" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="turning_bed_mattress_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="in_bed_system" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="in_bed_system_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="number_of_staff_required" minOccurs="0" type="xs:int" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="moving_and_handling_task_-_sitting_up_in_bed" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="task_name" minOccurs="0" type="xs:string" />
+                          <xs:element name="capability" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0045::Independent" />
+                                <xs:enumeration value="at0046::Supervision" />
+                                <xs:enumeration value="at0047::Assistance" />
+                                <xs:enumeration value="at0087::Not Appropriate" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="handling_techniques" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="reposition_using_bed_functions" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="reposition_using_bed_functions_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="verbal_instruction" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="verbal_instruction_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="reposition_with_hoist" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="reposition_with_hoist_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="manually_assisted_sit" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="manually_assisted_sit_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="specifics_to_support_individual_care" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="equipment_requirements" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="profiling_bed" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="profiling_bed_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="bed_rail" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="bed_rail_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="bed_ladder" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="bed_ladder_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="repositioning_sheet" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="repositioning_sheet_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="hoist_sling" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="hoist_sling_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="a2_flat_slide_sheets" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="a2_flat_slide_sheets_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="shoulder_strap_support" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="shoulder_strap_support_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="number_of_staff_required" minOccurs="0" type="xs:int" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="exclusion_of_assessment" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="assessment_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="moving_and_handling_task_-_sitting_in_bed_side_lying_to_from_edge_sitting" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="task_name" minOccurs="0" type="xs:string" />
+                          <xs:element name="capability" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0045::Independent" />
+                                <xs:enumeration value="at0046::Supervision" />
+                                <xs:enumeration value="at0047::Assistance" />
+                                <xs:enumeration value="at0087::Not Appropriate" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="handling_techniques" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="verbal_instruction" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="verbal_instruction_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="manual_shoulder_and_pelvis_support" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="manual_shoulder_and_pelvis_support_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="slide_sheet_manoeuvre" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="slide_sheet_manoeuvre_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="reposition_with_hoist" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="reposition_with_hoist_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="specifics_to_support_individual_care" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="equipment_requirements" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="none" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="none_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="profiling_bed" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="profiling_bed_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="bed_rail" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="bed_rail_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="a2_flat_slide_sheets" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="a2_flat_side_sheets_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="hoist" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="hoist_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="hoist_sling" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="hoist_sling_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="number_of_staff_required" minOccurs="0" type="xs:int" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="exclusion_of_assessment" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="assessment_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="moving_and_handling_task_-_bed_to_bed" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="task_name" minOccurs="0" type="xs:string" />
+                          <xs:element name="capability" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0045::Independent" />
+                                <xs:enumeration value="at0046::Supervision" />
+                                <xs:enumeration value="at0047::Assistance" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="handling_techniques" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="verbal_instruction" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="verbal_instruction_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="lateral_transfer" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="lateral_transfer_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="specifics_to_support_individual_care" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="equipment_requirements" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="transfer_board" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="transfer_board_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="a2_flat_slide_sheets" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="a2_flat_slide_sheets_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="straps" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="straps_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="inflatable_transfer_mattress" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="inflatable_transfer_mattress_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="hoist" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="hoist_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="hoist_sling" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="hoist_sling_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="repositioning_sheet" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="repositioning_sheet_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="roll_board" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="roll_board_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="number_of_staff_required" minOccurs="0" type="xs:int" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="moving_and_handling_task_-_sit_to_from_stand_chair_commode_or_toilet" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="task_name" minOccurs="0" type="xs:string" />
+                          <xs:element name="capability" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0045::Independent" />
+                                <xs:enumeration value="at0046::Supervision" />
+                                <xs:enumeration value="at0047::Assistance" />
+                                <xs:enumeration value="at0087::Not Appropriate" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="handling_techniques" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="assessment_of_tone_function" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="assessment_of_tone_function_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="verbal_instruction" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="verbal_instruction_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="leg_walking_shuffle" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="leg_walking_shuffle_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="moving_forward_or_back_from_edge_manoeuvre" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="moving_forward_or_back_from_edge_manoeuvre_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="side_assisted_standing_sitting_transfer" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="side_assisted_standing_sitting_transfer_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="equipment_supported_transfer" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="equipment_supported_transfer_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="specifics_to_support_individual_care" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="equipment_requirements" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="none" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="none_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="manual_stand_aid" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="manual_stand_aid_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="electronic_stand_aid" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="electronic_stand_aid_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="number_of_staff_required" minOccurs="0" type="xs:int" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="exclusion_of_assessment" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="assessment_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="moving_and_handling_task_-_seated_to_seated_transfer_chair_commode_or_toilet" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="task_name" minOccurs="0" type="xs:string" />
+                          <xs:element name="capability" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0045::Independent" />
+                                <xs:enumeration value="at0046::Supervision" />
+                                <xs:enumeration value="at0047::Assistance" />
+                                <xs:enumeration value="at0087::Not Appropriate" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="handling_techniques" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="verbal_instruction" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="verbal_instruction_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="positioning_of_equipment" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="positioning_of_equipment_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="hip_support_for_initiating_the_move" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="hip_support_for_initiating_the_move_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="specifics_to_support_individual_care" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="equipment_requirements" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="seated_transfer_board" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="seated_transfer_board_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="number_of_staff_required" minOccurs="0" type="xs:int" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="exclusion_of_assessment" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="assessment_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="moving_and_handling_task_-_walking" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="task_name" minOccurs="0" type="xs:string" />
+                          <xs:element name="capability" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0045::Independent" />
+                                <xs:enumeration value="at0046::Supervision" />
+                                <xs:enumeration value="at0047::Assistance" />
+                                <xs:enumeration value="at0087::Not Appropriate" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="handling_techniques" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="verbal_instruction" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="verbal_instruction_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="safe_handhold" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="safe_handhold_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="with_walking_aid" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="with_walking_aid_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="standing_with_hoist_assistance" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="standing_with_hoist_assistance_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="specifics_to_support_individual_care" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="equipment_requirements" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="none" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="none_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="walking_stick_s" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="walking_stick_s_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="crutch_es" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="crutch_es_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="walking_frame" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="walking_frame_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="specialist_frame" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="specialist_frame_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="hoist_with_walking_sling" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="hoist_with_walking_sling_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="electronic_stand_aid_with_sling" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="electronic_stand_aid_with_sling_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="number_of_staff_required" minOccurs="0" type="xs:int" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="exclusion_of_assessment" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="assessment_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="moving_and_handling_task_-_emergency_handling" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="task_name" minOccurs="0" type="xs:string" />
+                          <xs:element name="capability" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0045::Independent" />
+                                <xs:enumeration value="at0046::Supervision" />
+                                <xs:enumeration value="at0047::Assistance" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="handling_techniques" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="assess_for_patient_injury" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description_text" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description_coded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="assess_for_patient_injury_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="specifics_to_support_individual_care" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="equipment_requirements" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="flat_lift_kit" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="flat_lift_kit_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="hoist_with_stretcher_standard_sling_scoop_stretcher" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="hoist_with_stretcher_standard_sling_scoop_stretcher_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="lifting_sheet_scoop_stretcher" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="lifting_sheet_scoop_stretcher_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="independent_floor_to_sitting" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="independent_floor_to_sitting_required" minOccurs="0" type="xs:boolean" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="number_of_staff_required" minOccurs="0" type="xs:int" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="equipment_checklist" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="overhead_hoist_system" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="overhead_hoist_system_required" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="medical_device" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="device_name" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Guldmann GH2" />
+                                            <xs:enumeration value="Guldmann GH3" />
+                                            <xs:enumeration value="Liko Gantry" />
+                                            <xs:enumeration value="Other" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="type" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="unique_device_identifier_udi" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="manufacturer" minOccurs="0" type="xs:string" />
+                                      <xs:element name="date_of_manufacture" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="serial_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="catalogue_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="model_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="batch_lot_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="software_version" minOccurs="0" type="xs:string" />
+                                      <xs:element name="date_of_expiry" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="other_identifier" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="other_-_please_provide_details" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="mobile_hoist_system" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="mobile_hoist_system_required" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="medical_device" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="device_name" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Liko XL" />
+                                            <xs:enumeration value="Liko M" />
+                                            <xs:enumeration value="Arjo Opera" />
+                                            <xs:enumeration value="Other" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="type" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="unique_device_identifier_udi" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="manufacturer" minOccurs="0" type="xs:string" />
+                                      <xs:element name="date_of_manufacture" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="serial_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="catalogue_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="model_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="batch_lot_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="software_version" minOccurs="0" type="xs:string" />
+                                      <xs:element name="date_of_expiry" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="other_identifier" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="other_-_please_provide_details" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="sit_to_stand_hoist_system" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="sit_to_stand_hoist_system_required" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="medical_device" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="device_name" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Sara Plus (Powered)" />
+                                            <xs:enumeration value="Return 7500 (Manual)" />
+                                            <xs:enumeration value="Sara Steady" />
+                                            <xs:enumeration value="Encore" />
+                                            <xs:enumeration value="Other" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="type" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="unique_device_identifier_udi" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="manufacturer" minOccurs="0" type="xs:string" />
+                                      <xs:element name="date_of_manufacture" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="serial_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="catalogue_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="model_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="batch_lot_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="software_version" minOccurs="0" type="xs:string" />
+                                      <xs:element name="date_of_expiry" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="other_identifier" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="other_-_please_provide_details" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="sling" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="sling_required" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="medical_device" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="device_name" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Basic High Standard" />
+                                            <xs:enumeration value="Amputee" />
+                                            <xs:enumeration value="Sit on" />
+                                            <xs:enumeration value="Basic Hammock" />
+                                            <xs:enumeration value="Standing Sling Standard" />
+                                            <xs:enumeration value="Standing Sling Special" />
+                                            <xs:enumeration value="Repositioning" />
+                                            <xs:enumeration value="Turning Standard" />
+                                            <xs:enumeration value="Turning Twin" />
+                                            <xs:enumeration value="Leg Sling" />
+                                            <xs:enumeration value="Pannus Support" />
+                                            <xs:enumeration value="Stretcher" />
+                                            <xs:enumeration value="Other" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="type" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="unique_device_identifier_udi" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="manufacturer" minOccurs="0" type="xs:string" />
+                                      <xs:element name="date_of_manufacture" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="serial_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="catalogue_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="model_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="batch_lot_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="software_version" minOccurs="0" type="xs:string" />
+                                      <xs:element name="date_of_expiry" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="other_identifier" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="other_-_please_provide_details" minOccurs="0" type="xs:string" />
+                                <xs:element name="other_properties" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="size" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="at0069::S" />
+                                            <xs:enumeration value="at0070::M" />
+                                            <xs:enumeration value="at0071::L" />
+                                            <xs:enumeration value="at0072::XL" />
+                                            <xs:enumeration value="at0073::XXL" />
+                                            <xs:enumeration value="at0074::XXXL" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="bed" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="bed_required" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="medical_device" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="device_name" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Electric Standard" />
+                                            <xs:enumeration value="Electric Low" />
+                                            <xs:enumeration value="Specialist" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="type" minOccurs="0" type="xs:string" />
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="unique_device_identifier_udi" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="manufacturer" minOccurs="0" type="xs:string" />
+                                      <xs:element name="date_of_manufacture" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="serial_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="catalogue_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="model_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="batch_lot_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="software_version" minOccurs="0" type="xs:string" />
+                                      <xs:element name="date_of_expiry" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="other_identifier" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="other_-_please_provide_details" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="walking_stick" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="walking_stick_required" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="other_-_please_provide_details" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="zimmer_frame" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="zimmer_frame_required" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="other_-_please_provide_details" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="sitting_transfer_board_banana" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="sitting_transfer_board_banana_required" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="other_-_please_provide_details" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="a2_flat_slide_sheets" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="a2_flat_slide_sheets_required" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="other_-_please_provide_details" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="other" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="any_other_equipment_required" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="other_-_please_provide_details" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="last_updated" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="body_weight" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="weight" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="magnitude" type="xs:decimal" />
+                          <xs:element name="unit">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="kg" />
+                                <xs:enumeration value="[lb_av]" />
+                                <xs:enumeration value="g" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                    <xs:element name="state_of_dress" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0013::Naked" />
+                          <xs:enumeration value="at0017::Nappy/diaper" />
+                          <xs:enumeration value="at0011::Lightly clothed/underwear" />
+                          <xs:enumeration value="at0028::Fully clothed, without shoes" />
+                          <xs:enumeration value="at0010::Fully clothed, including shoes" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="confounding_factors" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="reporting_status" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="measurement_input" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Actual" />
+                          <xs:enumeration value="Reported" />
+                          <xs:enumeration value="Estimated" />
+                          <xs:enumeration value="Other" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="estimated_date" minOccurs="0" type="xs:date" />
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="height_length" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="height_length" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="magnitude" type="xs:decimal" />
+                          <xs:element name="unit">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="cm" />
+                                <xs:enumeration value="[in_i]" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                    <xs:element name="position" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0016::Standing" />
+                          <xs:enumeration value="at0020::Lying" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="confounding_factors" minOccurs="0" type="xs:string" />
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="birth" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="height_length" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="magnitude" type="xs:decimal" />
+                          <xs:element name="unit">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="cm" />
+                                <xs:enumeration value="[in_i]" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                    <xs:element name="position" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0016::Standing" />
+                          <xs:enumeration value="at0020::Lying" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="confounding_factors" minOccurs="0" type="xs:string" />
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="reporting_status" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="measurement_input" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Actual" />
+                          <xs:enumeration value="Reported" />
+                          <xs:enumeration value="Estimated" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="estimated_date" minOccurs="0" type="xs:date" />
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="category" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="433::event" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="composer" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:string" />
+              <xs:element name="id_scheme" type="xs:string" />
+              <xs:element name="id_namespace" type="xs:string" />
+              <xs:element name="name" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="template_id" fixed="Moving and Handling Assessment and Care Plan" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

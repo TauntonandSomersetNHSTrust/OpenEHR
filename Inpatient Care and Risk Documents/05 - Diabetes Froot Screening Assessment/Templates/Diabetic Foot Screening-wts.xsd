@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="diabetic_foot_screening">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="context">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="xds_metadata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="author_specialty" minOccurs="0" type="xs:string" />
+                    <xs:element name="class_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="document_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="confidentiality_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="health_care_facility_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="practice_setting_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="event_code" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="document_media" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="uri" type="xs:string" />
+                          <xs:element name="mediatype" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="document_metadata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="document_status" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0002::Approved" />
+                          <xs:enumeration value="at0003::Draft" />
+                          <xs:enumeration value="at0004::Recorded In Error" />
+                          <xs:enumeration value="at0005::Final" />
+                          <xs:enumeration value="at0008::Superseeded" />
+                          <xs:enumeration value="at0009::Archived" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="document_tags" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="tag_name" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="document_references" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="reference" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="reference" minOccurs="0" type="xs:string" />
+                                <xs:element name="type" minOccurs="0" type="xs:string" />
+                                <xs:element name="identifier" minOccurs="0" type="xs:string" />
+                                <xs:element name="display_text" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="encounter_context" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="encounter_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_type" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_reason" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="appointment_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="start_time" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="setting" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="openehr::225::home" />
+                    <xs:enumeration value="openehr::227::emergency care" />
+                    <xs:enumeration value="openehr::228::primary medical care" />
+                    <xs:enumeration value="openehr::229::primary nursing care" />
+                    <xs:enumeration value="openehr::230::primary allied health care" />
+                    <xs:enumeration value="openehr::231::midwifery care" />
+                    <xs:enumeration value="openehr::232::secondary medical care" />
+                    <xs:enumeration value="openehr::233::secondary nursing care" />
+                    <xs:enumeration value="openehr::234::secondary allied health care" />
+                    <xs:enumeration value="openehr::235::complementary health care" />
+                    <xs:enumeration value="openehr::236::dental care" />
+                    <xs:enumeration value="openehr::237::nursing home care" />
+                    <xs:enumeration value="openehr::238::other care" />
+                    <xs:enumeration value="openehr::435::laboratory" />
+                    <xs:enumeration value="openehr::436::imaging" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="diabetes_foot_screening_assessment" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="diabetes_question" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="does_the_patient_have_diabetes" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="diabetes_type" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="46635009::Type 1 Diabetes" />
+                          <xs:enumeration value="44054006::Type 2 Diabetes" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="bilateral_amputee" minOccurs="0" type="xs:boolean" />
+              <xs:element name="is_the_patient_unable_to_comprehend_or_answer_questions" minOccurs="0" type="xs:boolean" />
+              <xs:element name="foot_sensation_left" minOccurs="0" maxOccurs="2">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="laterality" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0009::Left" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="first_toe_sensation" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="second_toe_sensation" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="third_toe_sensation" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="fourth_toe_sensation" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="fifth_toe_sensation" minOccurs="0" type="xs:boolean" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="foot_sensation_right" minOccurs="0" maxOccurs="2">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="laterality" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0010::Right" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="first_toe_sensation" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="second_toe_sensation" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="third_toe_sensation" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="fourth_toe_sensation" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="fifth_toe_sensation" minOccurs="0" type="xs:boolean" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="additional_questions" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="is_there_evidence_of_inflammation_acute_infection_gangrene_or_broken_skin" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="tissue_condition" minOccurs="0" maxOccurs="unbounded">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0017::Inflamation" />
+                          <xs:enumeration value="at0018::Broken Skin" />
+                          <xs:enumeration value="at0019::Acute Infection" />
+                          <xs:enumeration value="at0020::Gangrene" />
+                          <xs:enumeration value="at0024::Normal" />
+                          <xs:enumeration value="at0025::Abnormal" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="reduced_sensation" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="normal_sensation" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="assessment_outcome" minOccurs="0" maxOccurs="unbounded">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="at0032::No Action Required" />
+                    <xs:enumeration value="at0033::Urgent Diabetes Specialist Podiatrist Team Review Required" />
+                    <xs:enumeration value="at0034::Referral to Inpatient Podiatry Required" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="category" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="433::event" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="composer" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:string" />
+              <xs:element name="id_scheme" type="xs:string" />
+              <xs:element name="id_namespace" type="xs:string" />
+              <xs:element name="name" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="template_id" fixed="Diabetic Foot Screening" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

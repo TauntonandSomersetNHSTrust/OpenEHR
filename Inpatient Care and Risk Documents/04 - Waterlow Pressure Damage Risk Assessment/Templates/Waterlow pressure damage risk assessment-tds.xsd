@@ -1,0 +1,3655 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Generated using tds-default.xsl v2.3 ($Revision: 4657 $)--><xs:schema xmlns:oe="http://schemas.openehr.org/v1" xmlns="http://schemas.oceanehr.com/templates"  elementFormDefault="qualified" targetNamespace="http://schemas.oceanehr.com/templates" xmlns:xs="http://www.w3.org/2001/XMLSchema"><xs:import xmlns:xs="http://www.w3.org/2001/XMLSchema" schemaLocation="Structure.xsd" namespace="http://schemas.openehr.org/v1"/><xs:element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="Waterlow_pressure_damage_risk_assessment">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Waterlow pressure damage risk assessment"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0" maxOccurs="1"/>
+<xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="language">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="ISO_639-1" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string" default="en" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="territory">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="ISO_3166-1" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="category">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" fixed="event"/>
+<xs:element name="defining_code">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="openehr" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string" fixed="433" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="composer" type="oe:PARTY_PROXY"/>
+<xs:element name="context">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="start_time" type="oe:DV_DATE_TIME"/>
+<xs:element name="end_time" minOccurs="0" maxOccurs="1" type="oe:DV_DATE_TIME"/>
+<xs:element name="location" minOccurs="0" maxOccurs="1" type="xs:string"/>
+<xs:element name="setting" type="oe:DV_CODED_TEXT"/>
+<xs:element name="XDS_Metadata" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="XDS Metadata"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Author_specialty" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Author specialty"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0001" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Class_code" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Class code"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0002" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Document_type" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Document type"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="SNOMED-CT::445302003::Assessment using Waterlow pressure ulcer risk scale (procedure)" type="xs:string"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0003" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Confidentiality_code" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Confidentiality code"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0004" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Health_care_facility_type" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Health care facility type"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0007" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Practice_setting_code" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Practice setting code"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0009" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Event_code" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Event code"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0011" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Document_media" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Document_media"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="alternate_text" type="xs:string" minOccurs="0"/>
+<xs:element name="uri" type="oe:DV_URI" minOccurs="0"/>
+<xs:element name="data" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="media_type">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:token" fixed="IANA_media-types"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="video/H263-1998"/>
+<xs:enumeration value="video/H263-2000"/>
+<xs:enumeration value="video/MPV"/>
+<xs:enumeration value="video/quicktime"/>
+<xs:enumeration value="text/calendar"/>
+<xs:enumeration value="text/directory"/>
+<xs:enumeration value="text/html"/>
+<xs:enumeration value="text/plain"/>
+<xs:enumeration value="text/rtf"/>
+<xs:enumeration value="text/sgml"/>
+<xs:enumeration value="text/tab-separated-values"/>
+<xs:enumeration value="text/uri-list"/>
+<xs:enumeration value="text/xml"/>
+<xs:enumeration value="text/xml-external-parsed-entity"/>
+<xs:enumeration value="image/png"/>
+<xs:enumeration value="image/jpeg"/>
+<xs:enumeration value="application/msword"/>
+<xs:enumeration value="application/pdf"/>
+<xs:enumeration value="audio/DVI4"/>
+<xs:enumeration value="audio/G722"/>
+<xs:enumeration value="audio/G723"/>
+<xs:enumeration value="audio/G726-16"/>
+<xs:enumeration value="audio/G726-24"/>
+<xs:enumeration value="audio/G726-32"/>
+<xs:enumeration value="audio/G726-40"/>
+<xs:enumeration value="audio/G728"/>
+<xs:enumeration value="audio/L8"/>
+<xs:enumeration value="audio/L16"/>
+<xs:enumeration value="audio/LPC"/>
+<xs:enumeration value="audio/G729"/>
+<xs:enumeration value="audio/G729D"/>
+<xs:enumeration value="audio/G729E"/>
+<xs:enumeration value="audio/mpeg"/>
+<xs:enumeration value="audio/mpeg4-generic"/>
+<xs:enumeration value="audio/L20"/>
+<xs:enumeration value="audio/L24"/>
+<xs:enumeration value="audio/telephone-event"/>
+<xs:enumeration value="video/BT656"/>
+<xs:enumeration value="video/CelB"/>
+<xs:enumeration value="video/H261"/>
+<xs:enumeration value="video/H263"/>
+<xs:enumeration value="application/rtf"/>
+<xs:enumeration value="application/dicom"/>
+<xs:enumeration value="application/vnd.oasis.opendocument.text"/>
+<xs:enumeration value="application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="size" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0010" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_MULTIMEDIA"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="openEHR-EHR-CLUSTER.xds_metadata.v0" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="CLUSTER" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Encounter_Context" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Encounter Context"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Encounter_id" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Encounter id"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0002" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Encounter_type" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Encounter type"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0003" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Encounter_reason" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Encounter reason"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0004" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Appointment_id" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Appointment id"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0001" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="openEHR-EHR-CLUSTER.encounter_context.v0" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="CLUSTER" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="health_care_facility" minOccurs="0" maxOccurs="1" type="oe:PARTY_IDENTIFIED"/>
+<xs:element name="participations" minOccurs="0" maxOccurs="unbounded" type="oe:PARTICIPATION"/>
+</xs:sequence>
+<xs:attribute name="other_context_node_id" fixed="at0001" type="oe:archetypeNodeId"/>
+<xs:attribute name="other_context_type" fixed="ITEM_TREE" type="xs:string"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Waterlow_score" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Waterlow score"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0" maxOccurs="1"/>
+<xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="language">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="ISO_639-1" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string" default="en" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="encoding">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="IANA_character-sets" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string" default="UTF-8" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="subject" type="oe:PARTY_SELF"/>
+<xs:element name="provider" type="oe:PARTY_IDENTIFIED" minOccurs="0" maxOccurs="1"/>
+<xs:element name="other_participations" type="oe:PARTICIPATION" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="protocol" minOccurs="0" maxOccurs="1">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Score_version" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Score version"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0133" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0132" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="data">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="origin" type="oe:DV_DATE_TIME" minOccurs="0"/>
+<xs:element name="Any_point_in_time_event" minOccurs="0" maxOccurs="8">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Any point in time event"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="time" type="oe:DV_DATE_TIME"/>
+<xs:element name="data">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Waterlow_score" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Waterlow score"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:minInclusive value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0014" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_COUNT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Overall_risk_grade" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Overall risk grade"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="local" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="at0161"/><!-- Value = At risk --><xs:enumeration value="at0162"/><!-- Value = High risk --><xs:enumeration value="at0163"/><!-- Value = Very high risk --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0015" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_CODED_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Comment" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Comment"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0019" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Sex" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Sex"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="1"/><!-- symbol.value = Male (symbol.code_string = at0028) --><xs:enumeration value="2"/><!-- symbol.value = Female (symbol.code_string = at0029) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0008" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Age_group" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Age group"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = Less than 14 years (symbol.code_string = at0134) --><xs:enumeration value="1"/><!-- symbol.value = 14-49 (symbol.code_string = at0030) --><xs:enumeration value="2"/><!-- symbol.value = 50-64 (symbol.code_string = at0031) --><xs:enumeration value="3"/><!-- symbol.value = 65-74 (symbol.code_string = at0032) --><xs:enumeration value="4"/><!-- symbol.value = 75-80 (symbol.code_string = at0033) --><xs:enumeration value="5"/><!-- symbol.value = 81+ (symbol.code_string = at0034) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0009" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Build_fslash_weight_for_height" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Build/weight for height"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = Average (symbol.code_string = at0020) --><xs:enumeration value="1"/><!-- symbol.value = Above average (symbol.code_string = at0021) --><xs:enumeration value="2"/><!-- symbol.value = Obese (symbol.code_string = at0022) --><xs:enumeration value="3"/><!-- symbol.value = Below average (symbol.code_string = at0023) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0004" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Continence" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Continence"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = Complete / catheterised (symbol.code_string = at0024) --><xs:enumeration value="1"/><!-- symbol.value = Urinary incontinence (symbol.code_string = at0025) --><xs:enumeration value="2"/><!-- symbol.value = Faecal incontinence (symbol.code_string = at0026) --><xs:enumeration value="3"/><!-- symbol.value = Urinary and faecal incontinence (symbol.code_string = at0027) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0005" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Mobility" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Mobility"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = Fully mobile (symbol.code_string = at0035) --><xs:enumeration value="1"/><!-- symbol.value = Restless/ fidgety (symbol.code_string = at0036) --><xs:enumeration value="2"/><!-- symbol.value = Apathetic (symbol.code_string = at0037) --><xs:enumeration value="3"/><!-- symbol.value = Restricted (symbol.code_string = at0038) --><xs:enumeration value="4"/><!-- symbol.value = Bedbound (symbol.code_string = at0039) --><xs:enumeration value="5"/><!-- symbol.value = Chairbound/Wheelchair (symbol.code_string = at0040) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0007" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Nutritional_risk" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Nutritional risk"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Weight_loss" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Weight loss"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = No recent weight loss (symbol.code_string = at0131) --><xs:enumeration value="1"/><!-- symbol.value = 0.5-5kg (symbol.code_string = at0055) --><xs:enumeration value="2"/><!-- symbol.value = 5-10kg (or Amount unsure) (symbol.code_string = at0056) --><xs:enumeration value="3"/><!-- symbol.value = 10-15kg (symbol.code_string = at0057) --><xs:enumeration value="4"/><!-- symbol.value = Over 15kg (symbol.code_string = at0058) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0054" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Appetite" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Appetite"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = Average (symbol.code_string = at0045) --><xs:enumeration value="1"/><!-- symbol.value = Poor (symbol.code_string = at0046) --><xs:enumeration value="2"/><!-- symbol.value = NG tube/fluids only (symbol.code_string = at0166) --><xs:enumeration value="3"/><!-- symbol.value = NBM/anorexic (symbol.code_string = at0167) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0044" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Nutritional_score" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Nutritional score"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:minInclusive value="0"/>
+<xs:maxInclusive value="5"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0130" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_COUNT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0129" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="CLUSTER" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Skin_type_visual_risk_areas" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Skin type visual risk areas"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Healthy" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Healthy"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = Healthy (symbol.code_string = at0116) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0116" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Tissue_-_paper" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Tissue-paper"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="1"/><!-- symbol.value = Tissue-paper (symbol.code_string = at0117) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0117" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Dry" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Dry"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="1"/><!-- symbol.value = Dry (symbol.code_string = at0118) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0118" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Oedematous" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Oedematous"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="1"/><!-- symbol.value = Oedematous (symbol.code_string = at0119) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0119" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Clammy_comma__pyrexia" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Clammy, pyrexia"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="1"/><!-- symbol.value = Clammy, pyrexia (symbol.code_string = at0120) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0120" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Discoloured__-__Category_1" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Discoloured - Category 1"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="2"/><!-- symbol.value = Discoloured - Category 1 (symbol.code_string = at0121) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0121" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Pressure_ulcer__-__Stage_2_-_4" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Pressure ulcer - Stage 2-4"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="2"/><!-- symbol.value = Pressure ulcer - Stage 2-4 (symbol.code_string = at0122) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0122" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Broken_spots__-__Category_2_-_4" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Broken spots - Category 2-4"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="3"/><!-- symbol.value = Broken spots - Category 2-4 (symbol.code_string = at0165) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0164" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0066" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="CLUSTER" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Tissue_malnutrition" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Tissue malnutrition"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Terminal_cachexia" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Terminal cachexia"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="8"/><!-- symbol.value = Terminal cachexia (symbol.code_string = at0123) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0123" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Single_organ_failure__openBrkt_respiratory_comma__renal_comma__cardiac_comma__liver_closeBrkt_" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Single organ failure (respiratory, renal, cardiac, liver)"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="5"/><!-- symbol.value = Single organ failure (respiratory, renal, cardiac, liver) (symbol.code_string = at0124) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0124" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Multiple_organ_failure" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Multiple organ failure"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="8"/><!-- symbol.value = Multiple organ failure (symbol.code_string = at0125) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0125" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Peripheral_vascular_disease" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Peripheral vascular disease"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="5"/><!-- symbol.value = Peripheral vascular disease (symbol.code_string = at0126) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0126" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Anaemia" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Anaemia"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="2"/><!-- symbol.value = Anaemia (symbol.code_string = at0127) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0127" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Smoking" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Smoking"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="1"/><!-- symbol.value = Smoking (symbol.code_string = at0128) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0128" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0070" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="CLUSTER" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Neurological_deficit" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Neurological deficit"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Diabetes_comma__MS_comma__CVA" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Diabetes, MS, CVA"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = No neurological deficit (symbol.code_string = at0136) --><xs:enumeration value="4"/><!-- symbol.value = Mild neurological deficit (symbol.code_string = at0137) --><xs:enumeration value="5"/><!-- symbol.value = Moderate neurological deficit (symbol.code_string = at0138) --><xs:enumeration value="6"/><!-- symbol.value = Severe neurological deficit (symbol.code_string = at0139) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0150" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Motor__fslash__sensory_deficit" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Motor / sensory deficit"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = No neurological deficit (symbol.code_string = at0136) --><xs:enumeration value="4"/><!-- symbol.value = Mild neurological deficit (symbol.code_string = at0137) --><xs:enumeration value="5"/><!-- symbol.value = Moderate neurological deficit (symbol.code_string = at0138) --><xs:enumeration value="6"/><!-- symbol.value = Severe neurological deficit (symbol.code_string = at0139) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0151" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Paraplegia" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Paraplegia"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = No neurological deficit (symbol.code_string = at0136) --><xs:enumeration value="4"/><!-- symbol.value = Mild neurological deficit (symbol.code_string = at0137) --><xs:enumeration value="5"/><!-- symbol.value = Moderate neurological deficit (symbol.code_string = at0138) --><xs:enumeration value="6"/><!-- symbol.value = Severe neurological deficit (symbol.code_string = at0139) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0152" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Combined_neurological_deficit" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Combined neurological deficit"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = No neurological deficit (symbol.code_string = at0136) --><xs:enumeration value="4"/><!-- symbol.value = Mild neurological deficit (symbol.code_string = at0137) --><xs:enumeration value="5"/><!-- symbol.value = Moderate neurological deficit (symbol.code_string = at0138) --><xs:enumeration value="6"/><!-- symbol.value = Severe neurological deficit (symbol.code_string = at0139) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0135" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0073" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="CLUSTER" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Major_surgery_or_trauma" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Major surgery or trauma"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Orthopaedic__fslash_spinal" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Orthopaedic /spinal"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = No orthopaedic / spinal surgery (symbol.code_string = at0153) --><xs:enumeration value="5"/><!-- symbol.value = Orthopaedic /spinal surgery (symbol.code_string = at0143) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0114" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Duration_of_surgery" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Duration of surgery"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = On table &lt; 2 hrs or not in past 48 hrs (symbol.code_string = at0154) --><xs:enumeration value="5"/><!-- symbol.value = On table &gt; 2 hrs (Past 48 hrs) (symbol.code_string = at0145) --><xs:enumeration value="8"/><!-- symbol.value = On table &gt; 6 hrs (Past 48 hrs) (symbol.code_string = at0146) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0144" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Major_Surgery_Or_Trauma_In_The_Last_48_Hours" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Major Surgery Or Trauma In The Last 48 Hours"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = No major surgery or trauma (symbol.code_string = at0157) --><xs:enumeration value="5"/><!-- symbol.value = Orthopaedic / spinal surgery (symbol.code_string = at0158) --><xs:enumeration value="5"/><!-- symbol.value = On table for more than 2 hours (symbol.code_string = at0159) --><xs:enumeration value="8"/><!-- symbol.value = On table for more than 6 hours (symbol.code_string = at0160) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0156" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0068" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="CLUSTER" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Medication" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Medication"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Cytotoxics" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Cytotoxics"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = No medication risk (symbol.code_string = at0141) --><xs:enumeration value="4"/><!-- symbol.value = Significant medication risk (symbol.code_string = at0142) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0106" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Steroids" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Steroids"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = No medication risk (symbol.code_string = at0141) --><xs:enumeration value="4"/><!-- symbol.value = Significant medication risk (symbol.code_string = at0142) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0107" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Anti_-_inflammatories" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Anti-inflammatories"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = No medication risk (symbol.code_string = at0141) --><xs:enumeration value="4"/><!-- symbol.value = Significant medication risk (symbol.code_string = at0142) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0108" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Combined_medication_risk" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Combined medication risk"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:enumeration value="0"/><!-- symbol.value = No medication risk (symbol.code_string = at0141) --><xs:enumeration value="4"/><!-- symbol.value = Significant medication risk (symbol.code_string = at0142) --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0140" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_ORDINAL"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0067" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="CLUSTER" name="type"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0003" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="state">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Confounding_factors" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Confounding factors"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0072" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0071" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0002" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute name="type" fixed="POINT_EVENT"/>
+<xs:attribute name="offset" fixed=""/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0001" name="archetype_node_id" type="oe:archetypeNodeId"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="openEHR-EHR-OBSERVATION.waterlow_score.v0" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="OBSERVATION" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Body_weight" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Body weight"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0" maxOccurs="1"/>
+<xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="language">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="ISO_639-1" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string" default="en" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="encoding">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="IANA_character-sets" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string" default="UTF-8" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="subject" type="oe:PARTY_SELF"/>
+<xs:element name="provider" type="oe:PARTY_IDENTIFIED" minOccurs="0" maxOccurs="1"/>
+<xs:element name="other_participations" type="oe:PARTICIPATION" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="protocol" minOccurs="0" maxOccurs="1">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Reporting_status" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Reporting status"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Measurement_input" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Measurement input"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Actual"/>
+<xs:enumeration value="Reported"/>
+<xs:enumeration value="Estimated"/>
+<xs:enumeration value="Other"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0001" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Estimated_date" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Estimated date"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_DATE"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0003" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_DATE"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Comment" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Comment"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0002" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="openEHR-EHR-CLUSTER.reporting_status.v0" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="CLUSTER" name="type"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0015" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="data">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="origin" type="oe:DV_DATE_TIME" minOccurs="0"/>
+<xs:choice minOccurs="0" maxOccurs="unbounded">
+<xs:element name="Any_event_as_Point_Event">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Any event"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="time" type="oe:DV_DATE_TIME"/>
+<xs:element name="data">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Weight">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Weight"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="kg_value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:minInclusive value="0.0"/>
+<xs:maxInclusive value="1000.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="kg"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="_lb_av__value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:minInclusive value="0.0"/>
+<xs:maxInclusive value="2000.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="[lb_av]"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="g_value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:minInclusive value="0.0"/>
+<xs:maxInclusive value="1000000.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="g"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0004" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_QUANTITY"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Comment" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Comment"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0024" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0001" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="state">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="State_of_dress" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="State of dress"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="local" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="at0013"/><!-- Value = Naked --><xs:enumeration value="at0017"/><!-- Value = Nappy/diaper --><xs:enumeration value="at0011"/><!-- Value = Lightly clothed/underwear --><xs:enumeration value="at0028"/><!-- Value = Fully clothed, without shoes --><xs:enumeration value="at0010"/><!-- Value = Fully clothed, including shoes --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0009" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_CODED_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Confounding_factors" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Confounding factors"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0025" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0008" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0003" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute name="type" fixed="POINT_EVENT"/>
+<xs:attribute name="offset" fixed=""/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Any_event_as_Interval_Event">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Any event"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="time" type="oe:DV_DATE_TIME"/>
+<xs:element name="width" type="oe:DV_DURATION"/>
+<xs:element name="math_function" type="oe:DV_CODED_TEXT"/>
+<xs:element name="data">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Weight">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Weight"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="kg_value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:minInclusive value="0.0"/>
+<xs:maxInclusive value="1000.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="kg"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="_lb_av__value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:minInclusive value="0.0"/>
+<xs:maxInclusive value="2000.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="[lb_av]"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="g_value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:minInclusive value="0.0"/>
+<xs:maxInclusive value="1000000.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="g"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0004" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_QUANTITY"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Comment" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Comment"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0024" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0001" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="state">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="State_of_dress" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="State of dress"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="local" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="at0013"/><!-- Value = Naked --><xs:enumeration value="at0017"/><!-- Value = Nappy/diaper --><xs:enumeration value="at0011"/><!-- Value = Lightly clothed/underwear --><xs:enumeration value="at0028"/><!-- Value = Fully clothed, without shoes --><xs:enumeration value="at0010"/><!-- Value = Fully clothed, including shoes --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0009" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_CODED_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Confounding_factors" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Confounding factors"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0025" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0008" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0003" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute name="type" fixed="INTERVAL_EVENT"/>
+<xs:attribute name="offset"/>
+</xs:complexType>
+</xs:element>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0002" name="archetype_node_id" type="oe:archetypeNodeId"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="openEHR-EHR-OBSERVATION.body_weight.v2" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="OBSERVATION" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Height_fslash_Length" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Height/Length"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0" maxOccurs="1"/>
+<xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="language">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="ISO_639-1" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string" default="en" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="encoding">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="IANA_character-sets" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string" default="UTF-8" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="subject" type="oe:PARTY_SELF"/>
+<xs:element name="provider" type="oe:PARTY_IDENTIFIED" minOccurs="0" maxOccurs="1"/>
+<xs:element name="other_participations" type="oe:PARTICIPATION" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="protocol" minOccurs="0" maxOccurs="1">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Reporting_status" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Reporting status"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Measurement_input" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Measurement input"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Actual"/>
+<xs:enumeration value="Reported"/>
+<xs:enumeration value="Estimated"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0001" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Estimated_date" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Estimated date"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_DATE"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0003" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_DATE"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Comment" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Comment"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0002" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="openEHR-EHR-CLUSTER.reporting_status.v0" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="CLUSTER" name="type"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0007" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="data">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="origin" type="oe:DV_DATE_TIME" minOccurs="0"/>
+<xs:choice minOccurs="0" maxOccurs="unbounded">
+<xs:element name="Any_event_as_Point_Event">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Any event"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="time" type="oe:DV_DATE_TIME"/>
+<xs:element name="data">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Height_fslash_Length">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Height/Length"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="cm_value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:minInclusive value="0.0"/>
+<xs:maxInclusive value="1000.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="cm"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="_in_i__value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:minInclusive value="0.0"/>
+<xs:maxInclusive value="250.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="[in_i]"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0004" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_QUANTITY"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Comment" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Comment"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0018" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0003" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="state">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Position" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Position"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="local" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="at0016"/><!-- Value = Standing --><xs:enumeration value="at0020"/><!-- Value = Lying --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0014" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_CODED_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Confounding_factors" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Confounding factors"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0019" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0013" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0002" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute name="type" fixed="POINT_EVENT"/>
+<xs:attribute name="offset" fixed=""/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Any_event_as_Interval_Event">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Any event"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="time" type="oe:DV_DATE_TIME"/>
+<xs:element name="width" type="oe:DV_DURATION"/>
+<xs:element name="math_function" type="oe:DV_CODED_TEXT"/>
+<xs:element name="data">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Height_fslash_Length">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Height/Length"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="cm_value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:minInclusive value="0.0"/>
+<xs:maxInclusive value="1000.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="cm"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="_in_i__value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:minInclusive value="0.0"/>
+<xs:maxInclusive value="250.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="[in_i]"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0004" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_QUANTITY"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Comment" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Comment"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0018" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0003" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="state">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Position" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Position"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="local" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="at0016"/><!-- Value = Standing --><xs:enumeration value="at0020"/><!-- Value = Lying --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0014" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_CODED_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Confounding_factors" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Confounding factors"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0019" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0013" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0002" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute name="type" fixed="INTERVAL_EVENT"/>
+<xs:attribute name="offset"/>
+</xs:complexType>
+</xs:element>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0001" name="archetype_node_id" type="oe:archetypeNodeId"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="openEHR-EHR-OBSERVATION.height.v2" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="OBSERVATION" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Body_mass_index" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Body mass index"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0" maxOccurs="1"/>
+<xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="language">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="ISO_639-1" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string" default="en" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="encoding">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="IANA_character-sets" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string" default="UTF-8" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="subject" type="oe:PARTY_SELF"/>
+<xs:element name="provider" type="oe:PARTY_IDENTIFIED" minOccurs="0" maxOccurs="1"/>
+<xs:element name="other_participations" type="oe:PARTICIPATION" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="protocol" minOccurs="0" maxOccurs="1">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Method" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Method"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="terminology_id">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" fixed="local" type="xs:token"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="code_string">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="at0007"/><!-- Value = Automatic entry --><xs:enumeration value="at0008"/><!-- Value = Direct entry --></xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0006" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_CODED_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Formula" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Formula"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0010" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0005" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="data">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="origin" type="oe:DV_DATE_TIME" minOccurs="0"/>
+<xs:choice minOccurs="0" maxOccurs="unbounded">
+<xs:element name="Any_event_as_Point_Event">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Any event"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="time" type="oe:DV_DATE_TIME"/>
+<xs:element name="data">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Body_mass_index">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Body mass index"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="kg_per_m2_value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:pattern value="(\+|\-)?(0|[1-9][0-9]*)?(\.[0-9]{1})?"/>
+<xs:minInclusive value="0.0"/>
+<xs:maxExclusive value="1000.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="precision">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:minInclusive value="1"/>
+<xs:maxInclusive value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="kg/m2"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="_lb_av__per__in_i_2_value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:pattern value="(\+|\-)?(0|[1-9][0-9]*)?(\.[0-9]{1})?"/>
+<xs:minInclusive value="0.0"/>
+<xs:maxExclusive value="1000.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="precision">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:minInclusive value="1"/>
+<xs:maxInclusive value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="[lb_av]/[in_i]2"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0004" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_QUANTITY"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Clinical_interpretation" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Clinical interpretation"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0013" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Comment" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Comment"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0012" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0003" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="state">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Confounding_factors" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Confounding factors"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0011" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0014" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0002" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute name="type" fixed="POINT_EVENT"/>
+<xs:attribute name="offset" fixed=""/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Any_event_as_Interval_Event">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Any event"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="time" type="oe:DV_DATE_TIME"/>
+<xs:element name="width" type="oe:DV_DURATION"/>
+<xs:element name="math_function" type="oe:DV_CODED_TEXT"/>
+<xs:element name="data">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Body_mass_index">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Body mass index"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="kg_per_m2_value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:pattern value="(\+|\-)?(0|[1-9][0-9]*)?(\.[0-9]{1})?"/>
+<xs:minInclusive value="0.0"/>
+<xs:maxExclusive value="1000.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="precision">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:minInclusive value="1"/>
+<xs:maxInclusive value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="kg/m2"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="_lb_av__per__in_i_2_value">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0"/>
+<xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0"/>
+<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+<xs:element name="magnitude">
+<xs:simpleType>
+<xs:restriction base="xs:double">
+<xs:pattern value="(\+|\-)?(0|[1-9][0-9]*)?(\.[0-9]{1})?"/>
+<xs:minInclusive value="0.0"/>
+<xs:maxExclusive value="1000.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="precision">
+<xs:simpleType>
+<xs:restriction base="xs:int">
+<xs:minInclusive value="1"/>
+<xs:maxInclusive value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="units" type="xs:string" fixed="[lb_av]/[in_i]2"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0004" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_QUANTITY"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Clinical_interpretation" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Clinical interpretation"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0013" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Comment" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Comment"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0012" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0003" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="state">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Confounding_factors" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="value" type="xs:string" default="Confounding factors"/>
+<xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:choice>
+<xs:element name="value" type="oe:DV_TEXT"/>
+<xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0011" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ELEMENT" name="type"/>
+<xs:attribute name="valueType" fixed="DV_TEXT"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0014" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="ITEM_TREE" name="type"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="at0002" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute name="type" fixed="INTERVAL_EVENT"/>
+<xs:attribute name="offset"/>
+</xs:complexType>
+</xs:element>
+</xs:choice>
+</xs:sequence>
+<xs:attribute fixed="at0001" name="archetype_node_id" type="oe:archetypeNodeId"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="openEHR-EHR-OBSERVATION.body_mass_index.v2" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="OBSERVATION" name="type"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute fixed="openEHR-EHR-COMPOSITION.encounter.v1" name="archetype_node_id" type="oe:archetypeNodeId"/>
+<xs:attribute fixed="COMPOSITION" name="type"/>
+<xs:attribute fixed="Waterlow pressure damage risk assessment" name="template_id" use="required"/>
+</xs:complexType>
+</xs:element></xs:schema>

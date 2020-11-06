@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="about_me">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="context">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="encounter_context" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="encounter_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_type" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_reason" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="appointment_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="xds_metadata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="author_specialty" minOccurs="0" type="xs:string" />
+                    <xs:element name="class_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="document_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="confidentiality_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="health_care_facility_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="practice_setting_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="event_code" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="document_media" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="uri" type="xs:string" />
+                          <xs:element name="mediatype" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="document_metadata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="document_status" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0002::Approved" />
+                          <xs:enumeration value="at0003::Draft" />
+                          <xs:enumeration value="at0004::Recorded In Error" />
+                          <xs:enumeration value="at0005::Final" />
+                          <xs:enumeration value="at0008::Superseeded" />
+                          <xs:enumeration value="at0009::Archived" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="document_tags" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="tag_name" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="document_references" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="reference" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="reference" minOccurs="0" type="xs:string" />
+                                <xs:element name="type" minOccurs="0" type="xs:string" />
+                                <xs:element name="identifier" minOccurs="0" type="xs:string" />
+                                <xs:element name="display_text" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="start_time" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="setting" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="openehr::225::home" />
+                    <xs:enumeration value="openehr::227::emergency care" />
+                    <xs:enumeration value="openehr::228::primary medical care" />
+                    <xs:enumeration value="openehr::229::primary nursing care" />
+                    <xs:enumeration value="openehr::230::primary allied health care" />
+                    <xs:enumeration value="openehr::231::midwifery care" />
+                    <xs:enumeration value="openehr::232::secondary medical care" />
+                    <xs:enumeration value="openehr::233::secondary nursing care" />
+                    <xs:enumeration value="openehr::234::secondary allied health care" />
+                    <xs:enumeration value="openehr::235::complementary health care" />
+                    <xs:enumeration value="openehr::236::dental care" />
+                    <xs:enumeration value="openehr::237::nursing home care" />
+                    <xs:enumeration value="openehr::238::other care" />
+                    <xs:enumeration value="openehr::435::laboratory" />
+                    <xs:enumeration value="openehr::436::imaging" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="generic_assessments" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="assessment_date" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="assessment_comment" minOccurs="0" type="xs:string" />
+              <xs:element name="assessments" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="communication" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="assessment_description" minOccurs="0" type="xs:string" />
+                          <xs:element name="assessment_date" minOccurs="0" type="xs:dateTime" />
+                          <xs:element name="assessment_code" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="code" type="xs:string" />
+                                <xs:element name="value" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_findings" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="text" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                                <xs:element name="coded_text" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="17621005::Normal" />
+                                      <xs:enumeration value="285055002::Uses hearing aid" />
+                                      <xs:enumeration value="162340000::Hearing difficulty" />
+                                      <xs:enumeration value="298651000000102::Registered deaf" />
+                                      <xs:enumeration value="225582009::Wears Glasses" />
+                                      <xs:enumeration value="300994001::Registered partially sighted" />
+                                      <xs:enumeration value="170727003::Registered Blind" />
+                                      <xs:enumeration value="366005007::Post-laryngectomy voice" />
+                                      <xs:enumeration value="288583009::Non-verbal communication" />
+                                      <xs:enumeration value="40917007::Confused" />
+                                      <xs:enumeration value="52448006::Dementia" />
+                                      <xs:enumeration value="315594003::Interpreter needed" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="boolean" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_actions" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="status" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0038::Required" />
+                                      <xs:enumeration value="at0039::Not Required" />
+                                      <xs:enumeration value="at0040::Pending" />
+                                      <xs:enumeration value="at0041::Completed" />
+                                      <xs:enumeration value="at0042::Unknown" />
+                                      <xs:enumeration value="at0043::Rejected" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="coded_text" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="260413007::None" />
+                                      <xs:enumeration value="423785008::Provision of interpreter/translator services" />
+                                      <xs:enumeration value="74964007::Other" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="action_recorded" minOccurs="0" type="xs:dateTime" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                <xs:element name="completed" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="completed" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="completed_accuracy" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="completed_by" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="text" minOccurs="0" type="xs:string" />
+                                            <xs:element name="id" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="id" type="xs:string" />
+                                                  <xs:element name="type" type="xs:string" />
+                                                  <xs:element name="issuer" type="xs:string" />
+                                                  <xs:element name="assigner" type="xs:string" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="personal_hygiene" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="assessment_description" minOccurs="0" type="xs:string" />
+                          <xs:element name="assessment_date" minOccurs="0" type="xs:dateTime" />
+                          <xs:element name="assessment_code" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="code" type="xs:string" />
+                                <xs:element name="value" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_findings" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="text" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                                <xs:element name="coded_text" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="371153006::Independent" />
+                                      <xs:enumeration value="371154000::Dependent" />
+                                      <xs:enumeration value="371152001::Assisted" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="boolean" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_actions" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="status" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0038::Required" />
+                                      <xs:enumeration value="at0039::Not Required" />
+                                      <xs:enumeration value="at0040::Pending" />
+                                      <xs:enumeration value="at0041::Completed" />
+                                      <xs:enumeration value="at0042::Unknown" />
+                                      <xs:enumeration value="at0043::Rejected" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="package_of_care_-_frequency" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="POC-OD::Once a Day" />
+                                      <xs:enumeration value="POC-BD::Twice a Day" />
+                                      <xs:enumeration value="POC-TD::Three times a Day" />
+                                      <xs:enumeration value="POC-QD::Four Times a Day" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="assistance_of" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="AOC-1::AO1" />
+                                      <xs:enumeration value="AOC-2::AO2" />
+                                      <xs:enumeration value="AOC-3::AO3" />
+                                      <xs:enumeration value="AOC-4::AO4" />
+                                      <xs:enumeration value="AOC-5::AO5" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="action_recorded" minOccurs="0" type="xs:dateTime" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                <xs:element name="completed" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="completed" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="completed_accuracy" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="completed_by" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="text" minOccurs="0" type="xs:string" />
+                                            <xs:element name="id" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="id" type="xs:string" />
+                                                  <xs:element name="type" type="xs:string" />
+                                                  <xs:element name="issuer" type="xs:string" />
+                                                  <xs:element name="assigner" type="xs:string" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="nutrition_and_hydration" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="assessment_description" minOccurs="0" type="xs:string" />
+                          <xs:element name="assessment_date" minOccurs="0" type="xs:dateTime" />
+                          <xs:element name="assessment_code" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="code" type="xs:string" />
+                                <xs:element name="value" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_findings" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="text" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                                <xs:element name="coded_text" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="17621005::Normal" />
+                                      <xs:enumeration value="73211009::Diabetes" />
+                                      <xs:enumeration value="226077000::Modified Diet" />
+                                      <xs:enumeration value="74964007::Other" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="diabetes_type" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="46635009::Type 1 Diabetes" />
+                                      <xs:enumeration value="44054006::Type 2 Diabetes" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="boolean" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_actions" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="status" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0038::Required" />
+                                      <xs:enumeration value="at0039::Not Required" />
+                                      <xs:enumeration value="at0040::Pending" />
+                                      <xs:enumeration value="at0041::Completed" />
+                                      <xs:enumeration value="at0042::Unknown" />
+                                      <xs:enumeration value="at0043::Rejected" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="coded_text" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="182923009::Nil by Mouth" />
+                                      <xs:enumeration value="765025006::Kosher diet" />
+                                      <xs:enumeration value="226233004::Halal meat diet" />
+                                      <xs:enumeration value="404919001::Wheat-free diet" />
+                                      <xs:enumeration value="765021002::Vegetarian diet" />
+                                      <xs:enumeration value="223456000::Provision of a special diet" />
+                                      <xs:enumeration value="361231003::Prescribed dietary intake" />
+                                      <xs:enumeration value="229914003::NG Fed" />
+                                      <xs:enumeration value="225373002::PEG fed" />
+                                      <xs:enumeration value="225372007::TPN fed" />
+                                      <xs:enumeration value="260413007::None" />
+                                      <xs:enumeration value="74964007::Other" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="iddsi_diet_levels" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="1102441000000101::Level 3 Diet – Liquidised" />
+                                      <xs:enumeration value="1102461000000100::Level 4 Diet – Puree" />
+                                      <xs:enumeration value="1102481000000109::Level 5 Diet – Minced and Moist" />
+                                      <xs:enumeration value="1102511000000103::Level 6 Diet – Soft and Bite Sized" />
+                                      <xs:enumeration value="439101000124101::Level 7* Diet – Easy to Chew" />
+                                      <xs:enumeration value="1102521000000109::Level 7 Diet – Regular" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="iddsi_fluid_levels" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="1102361000000108::Level 0 Fluids – Thin" />
+                                      <xs:enumeration value="1102371000000101::Level 1 Fluids – Slightly Thick" />
+                                      <xs:enumeration value="1102381000000104::Level 2 Fluids – Mildly Thick" />
+                                      <xs:enumeration value="1102391000000102::Level 3 Fluids – Moderately Thick" />
+                                      <xs:enumeration value="1102401000000104::Level 4 Fluids – Extremely Thick" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="action_recorded" minOccurs="0" type="xs:dateTime" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                <xs:element name="completed" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="completed" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="completed_accuracy" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="completed_by" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="text" minOccurs="0" type="xs:string" />
+                                            <xs:element name="id" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="id" type="xs:string" />
+                                                  <xs:element name="type" type="xs:string" />
+                                                  <xs:element name="issuer" type="xs:string" />
+                                                  <xs:element name="assigner" type="xs:string" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="sleep_and_rest" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="assessment_description" minOccurs="0" type="xs:string" />
+                          <xs:element name="assessment_date" minOccurs="0" type="xs:dateTime" />
+                          <xs:element name="assessment_code" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="code" type="xs:string" />
+                                <xs:element name="value" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_findings" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="text" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                                <xs:element name="coded_text" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="433206003::Able to Sleep" />
+                                      <xs:enumeration value="12262002::Restless Sleep" />
+                                      <xs:enumeration value="1075851000000109::Unable to sleep without sedation" />
+                                      <xs:enumeration value="SAR_NormallySleepsInChair::Normally sleeps in chair" />
+                                      <xs:enumeration value="74964007::Other" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="boolean" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_actions" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="status" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0038::Required" />
+                                      <xs:enumeration value="at0039::Not Required" />
+                                      <xs:enumeration value="at0040::Pending" />
+                                      <xs:enumeration value="at0041::Completed" />
+                                      <xs:enumeration value="at0042::Unknown" />
+                                      <xs:enumeration value="at0043::Rejected" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="coded_text" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="260413007::None" />
+                                      <xs:enumeration value="74964007::Other" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="action_recorded" minOccurs="0" type="xs:dateTime" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                <xs:element name="completed" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="completed" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="completed_accuracy" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="completed_by" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="text" minOccurs="0" type="xs:string" />
+                                            <xs:element name="id" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="id" type="xs:string" />
+                                                  <xs:element name="type" type="xs:string" />
+                                                  <xs:element name="issuer" type="xs:string" />
+                                                  <xs:element name="assigner" type="xs:string" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="elimination" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="assessment_description" minOccurs="0" type="xs:string" />
+                          <xs:element name="assessment_date" minOccurs="0" type="xs:dateTime" />
+                          <xs:element name="assessment_code" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="code" type="xs:string" />
+                                <xs:element name="value" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_findings" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="text" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                                <xs:element name="coded_text" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="261001000::Continent" />
+                                      <xs:enumeration value="72042002::Bowels: incontinent" />
+                                      <xs:enumeration value="165232002::Bladder: incontinent" />
+                                      <xs:enumeration value="439053001::Urinary catheter in situ" />
+                                      <xs:enumeration value="440311000::Suprapubic catheter in situ" />
+                                      <xs:enumeration value="14760008::Constipated" />
+                                      <xs:enumeration value="17185111000001104::Incontinence pads" />
+                                      <xs:enumeration value="339648008::Colostomy bag" />
+                                      <xs:enumeration value="417136005::Ileostomy bag" />
+                                      <xs:enumeration value="344088002::Urostomy bag" />
+                                      <xs:enumeration value="10743008::Irritable bowel syndrome" />
+                                      <xs:enumeration value="925281000000107::Able to use toilet with assistance" />
+                                      <xs:enumeration value="284908004::Unable to use toilet" />
+                                      <xs:enumeration value="284922004::Uses urine bottle" />
+                                      <xs:enumeration value="284928000::Uses Bedpan" />
+                                      <xs:enumeration value="74964007::Other" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="boolean" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_actions" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="status" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0038::Required" />
+                                      <xs:enumeration value="at0039::Not Required" />
+                                      <xs:enumeration value="at0040::Pending" />
+                                      <xs:enumeration value="at0041::Completed" />
+                                      <xs:enumeration value="at0042::Unknown" />
+                                      <xs:enumeration value="at0043::Rejected" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="coded_text" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="260413007::None" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="action_recorded" minOccurs="0" type="xs:dateTime" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                <xs:element name="completed" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="completed" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="completed_accuracy" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="completed_by" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="text" minOccurs="0" type="xs:string" />
+                                            <xs:element name="id" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="id" type="xs:string" />
+                                                  <xs:element name="type" type="xs:string" />
+                                                  <xs:element name="issuer" type="xs:string" />
+                                                  <xs:element name="assigner" type="xs:string" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="pain" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="assessment_description" minOccurs="0" type="xs:string" />
+                          <xs:element name="assessment_date" minOccurs="0" type="xs:dateTime" />
+                          <xs:element name="assessment_code" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="code" type="xs:string" />
+                                <xs:element name="value" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_findings" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="text" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                                <xs:element name="coded_text" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="260413007::None" />
+                                      <xs:enumeration value="428346000::Pain relief by medication" />
+                                      <xs:enumeration value="449810003::Patient controlled analgesia device in situ" />
+                                      <xs:enumeration value="288782002::Able to communicate needs" />
+                                      <xs:enumeration value="74964007::Other" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="boolean" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_actions" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="status" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0038::Required" />
+                                      <xs:enumeration value="at0039::Not Required" />
+                                      <xs:enumeration value="at0040::Pending" />
+                                      <xs:enumeration value="at0041::Completed" />
+                                      <xs:enumeration value="at0042::Unknown" />
+                                      <xs:enumeration value="at0043::Rejected" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="coded_text" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="260413007::None" />
+                                      <xs:enumeration value="LOCPAINACT001::PRN analgesia" />
+                                      <xs:enumeration value="LOCPAINACT002::Routine analgesia" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="action_recorded" minOccurs="0" type="xs:dateTime" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                <xs:element name="completed" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="completed" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="completed_accuracy" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="completed_by" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="text" minOccurs="0" type="xs:string" />
+                                            <xs:element name="id" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="id" type="xs:string" />
+                                                  <xs:element name="type" type="xs:string" />
+                                                  <xs:element name="issuer" type="xs:string" />
+                                                  <xs:element name="assigner" type="xs:string" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="breathing_and_circulation" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="assessment_description" minOccurs="0" type="xs:string" />
+                          <xs:element name="assessment_date" minOccurs="0" type="xs:dateTime" />
+                          <xs:element name="assessment_code" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="code" type="xs:string" />
+                                <xs:element name="value" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_findings" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="text" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                                <xs:element name="coded_text" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="17621005::Normal" />
+                                      <xs:enumeration value="371825009::Patient on oxygen" />
+                                      <xs:enumeration value="268512000::Home oxygen supply" />
+                                      <xs:enumeration value="414545008::Ischemic heart disease" />
+                                      <xs:enumeration value="84114007::Cardiac failure" />
+                                      <xs:enumeration value="13645005::COPD" />
+                                      <xs:enumeration value="230690007::Stroke" />
+                                      <xs:enumeration value="195967001::Asthma" />
+                                      <xs:enumeration value="704098003::Uses inhaler" />
+                                      <xs:enumeration value="302108003::Tracheostomy" />
+                                      <xs:enumeration value="72791001::Laryngectomy" />
+                                      <xs:enumeration value="74964007::Other" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="is_breathing_and_circulation_normal" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="assessment_actions" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="status" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0038::Required" />
+                                      <xs:enumeration value="at0039::Not Required" />
+                                      <xs:enumeration value="at0040::Pending" />
+                                      <xs:enumeration value="at0041::Completed" />
+                                      <xs:enumeration value="at0042::Unknown" />
+                                      <xs:enumeration value="at0043::Rejected" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="coded_text" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="260413007::None" />
+                                      <xs:enumeration value="707808001::Oxygen therapy support" />
+                                      <xs:enumeration value="74964007::Other" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="action_recorded" minOccurs="0" type="xs:dateTime" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                <xs:element name="completed" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="completed" minOccurs="0" type="xs:dateTime" />
+                                      <xs:element name="completed_accuracy" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="code" type="xs:string" />
+                                            <xs:element name="value" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="completed_by" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="text" minOccurs="0" type="xs:string" />
+                                            <xs:element name="id" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="id" type="xs:string" />
+                                                  <xs:element name="type" type="xs:string" />
+                                                  <xs:element name="issuer" type="xs:string" />
+                                                  <xs:element name="assigner" type="xs:string" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="last_updated" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="category" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="433::event" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="composer" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:string" />
+              <xs:element name="id_scheme" type="xs:string" />
+              <xs:element name="id_namespace" type="xs:string" />
+              <xs:element name="name" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="template_id" fixed="Patient Personal and Social Needs" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="core_care_plan_-_pressure_ulcer_prevention_and_management">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="context">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="encounter_context" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="encounter_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_type" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_reason" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="appointment_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="xds_metadata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="author_specialty" minOccurs="0" type="xs:string" />
+                    <xs:element name="class_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="document_type" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="SNOMED-CT::736054002::Pressure ulcer care plan (record artifact)" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="confidentiality_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="health_care_facility_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="practice_setting_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="event_code" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="document_media" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="uri" type="xs:string" />
+                          <xs:element name="mediatype" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="start_time" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="setting" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="openehr::225::home" />
+                    <xs:enumeration value="openehr::227::emergency care" />
+                    <xs:enumeration value="openehr::228::primary medical care" />
+                    <xs:enumeration value="openehr::229::primary nursing care" />
+                    <xs:enumeration value="openehr::230::primary allied health care" />
+                    <xs:enumeration value="openehr::231::midwifery care" />
+                    <xs:enumeration value="openehr::232::secondary medical care" />
+                    <xs:enumeration value="openehr::233::secondary nursing care" />
+                    <xs:enumeration value="openehr::234::secondary allied health care" />
+                    <xs:enumeration value="openehr::235::complementary health care" />
+                    <xs:enumeration value="openehr::236::dental care" />
+                    <xs:enumeration value="openehr::237::nursing home care" />
+                    <xs:enumeration value="openehr::238::other care" />
+                    <xs:enumeration value="openehr::435::laboratory" />
+                    <xs:enumeration value="openehr::436::imaging" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pressure_ulcer_prevention_management" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="problem_statement_or_issue">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="does_the_patient_have_an_existing_pressure_ulcer" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="pressure_ulceration_development_stage" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0006::At risk" />
+                                <xs:enumeration value="at0007::High risk" />
+                                <xs:enumeration value="at0008::Very high risk" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="category" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0010::Category 1" />
+                                <xs:enumeration value="at0011::Category 2" />
+                                <xs:enumeration value="at0012::Category 3" />
+                                <xs:enumeration value="at0013::Category 4" />
+                                <xs:enumeration value="at0014::Unstageable" />
+                                <xs:enumeration value="at0015::Mucosal" />
+                                <xs:enumeration value="at0016::Deep tissue injury" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="a_-_assess_-_plan_of_care" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="s_-_skin_inspection" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="risk_stage" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0020::At risk: 2-4 hourly" />
+                                      <xs:enumeration value="at0021::At high risk: 2 hourly" />
+                                      <xs:enumeration value="at0022::At very high risk: 1-2 hourly" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="s_-_surface" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="risk_stage" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0026::At risk" />
+                                      <xs:enumeration value="at0027::At high risk" />
+                                      <xs:enumeration value="at0028::At very high risk" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="k_-_keep_moving" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="risk_stage" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0051::At risk: 2-4 hourly" />
+                                      <xs:enumeration value="at0052::At high risk: 2 hourly" />
+                                      <xs:enumeration value="at0053::At very high risk: 1-2 hourly" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="i_-_incontinence" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="patient_has_bladder_bowel_incontinence" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="patient_has_moisture_lesion" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="treatment_line" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0060::First line treatment" />
+                                      <xs:enumeration value="at0061::Second line treatment" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="treatment_line_comment" minOccurs="0" type="xs:string" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="n_-_nutrition" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="referral_nutrition_type" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="food_chart" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="does_the_patient_need_a_food_chart" minOccurs="0" type="xs:boolean" />
+                                            <xs:element name="referral_option" minOccurs="0">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="at0092::Food chart" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="dietician_referral" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="does_the_patient_need_a_dietician_referral" minOccurs="0" type="xs:boolean" />
+                                            <xs:element name="referral_option" minOccurs="0">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="at0093::Dietician referral" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="g_-_patient_information" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="patient_information_leaflet_and_discussion">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="patient_information_leaflet_given" minOccurs="0" type="xs:boolean" />
+                                      <xs:element name="status" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="at0078::Discussed and understood" />
+                                            <xs:enumeration value="at0079::Discussed and partially understood" />
+                                            <xs:enumeration value="at0080::Unable to discuss" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="discuss_with_family_carers" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="safeguarding_considered" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="care_given_variance" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="last_updated" minOccurs="0" type="xs:date" />
+              <xs:element name="assessment_method" minOccurs="0" type="xs:string" />
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="category" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="433::event" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="composer" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:string" />
+              <xs:element name="id_scheme" type="xs:string" />
+              <xs:element name="id_namespace" type="xs:string" />
+              <xs:element name="name" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="template_id" fixed="Core care plan - pressure ulcer prevention and management" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

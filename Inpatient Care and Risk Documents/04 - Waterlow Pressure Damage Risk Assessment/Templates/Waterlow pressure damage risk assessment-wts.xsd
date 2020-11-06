@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="waterlow_pressure_damage_risk_assessment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="context">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="xds_metadata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="author_specialty" minOccurs="0" type="xs:string" />
+                    <xs:element name="class_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="document_type" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="SNOMED-CT::445302003::Assessment using Waterlow pressure ulcer risk scale (procedure)" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="confidentiality_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="health_care_facility_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="practice_setting_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="event_code" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="document_media" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="uri" type="xs:string" />
+                          <xs:element name="mediatype" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="encounter_context" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="encounter_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_type" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_reason" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="appointment_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="start_time" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="setting" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="openehr::225::home" />
+                    <xs:enumeration value="openehr::227::emergency care" />
+                    <xs:enumeration value="openehr::228::primary medical care" />
+                    <xs:enumeration value="openehr::229::primary nursing care" />
+                    <xs:enumeration value="openehr::230::primary allied health care" />
+                    <xs:enumeration value="openehr::231::midwifery care" />
+                    <xs:enumeration value="openehr::232::secondary medical care" />
+                    <xs:enumeration value="openehr::233::secondary nursing care" />
+                    <xs:enumeration value="openehr::234::secondary allied health care" />
+                    <xs:enumeration value="openehr::235::complementary health care" />
+                    <xs:enumeration value="openehr::236::dental care" />
+                    <xs:enumeration value="openehr::237::nursing home care" />
+                    <xs:enumeration value="openehr::238::other care" />
+                    <xs:enumeration value="openehr::435::laboratory" />
+                    <xs:enumeration value="openehr::436::imaging" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="waterlow_score" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="any_point_in_time_event" minOccurs="0" maxOccurs="8">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="waterlow_score" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                          <xs:minInclusive value="1" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="overall_risk_grade" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0161::At risk" />
+                          <xs:enumeration value="at0162::High risk" />
+                          <xs:enumeration value="at0163::Very high risk" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                    <xs:element name="sex" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0028::Male" />
+                          <xs:enumeration value="at0029::Female" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="age_group" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0134::Less than 14 years" />
+                          <xs:enumeration value="at0030::14-49" />
+                          <xs:enumeration value="at0031::50-64" />
+                          <xs:enumeration value="at0032::65-74" />
+                          <xs:enumeration value="at0033::75-80" />
+                          <xs:enumeration value="at0034::81+" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="build_weight_for_height" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0020::Average" />
+                          <xs:enumeration value="at0021::Above average" />
+                          <xs:enumeration value="at0022::Obese" />
+                          <xs:enumeration value="at0023::Below average" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="continence" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0024::Complete / catheterised" />
+                          <xs:enumeration value="at0025::Urinary incontinence" />
+                          <xs:enumeration value="at0026::Faecal incontinence" />
+                          <xs:enumeration value="at0027::Urinary and faecal incontinence" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="mobility" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0035::Fully mobile" />
+                          <xs:enumeration value="at0036::Restless/ fidgety" />
+                          <xs:enumeration value="at0037::Apathetic" />
+                          <xs:enumeration value="at0038::Restricted" />
+                          <xs:enumeration value="at0039::Bedbound" />
+                          <xs:enumeration value="at0040::Chairbound/Wheelchair" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="nutritional_risk" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="weight_loss" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0131::No recent weight loss" />
+                                <xs:enumeration value="at0055::0.5-5kg" />
+                                <xs:enumeration value="at0056::5-10kg (or Amount unsure)" />
+                                <xs:enumeration value="at0057::10-15kg" />
+                                <xs:enumeration value="at0058::Over 15kg" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="appetite" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0045::Average" />
+                                <xs:enumeration value="at0046::Poor" />
+                                <xs:enumeration value="at0166::NG tube/fluids only" />
+                                <xs:enumeration value="at0167::NBM/anorexic" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="nutritional_score" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:int">
+                                <xs:minInclusive value="0" />
+                                <xs:maxInclusive value="5" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="skin_type_visual_risk_areas" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="healthy" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0116::Healthy" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="tissue-paper" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0117::Tissue-paper" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="dry" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0118::Dry" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="oedematous" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0119::Oedematous" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="clammy_pyrexia" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0120::Clammy, pyrexia" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="discoloured_-_category_1" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0121::Discoloured - Category 1" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="pressure_ulcer_-_stage_2-4" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0122::Pressure ulcer - Stage 2-4" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="broken_spots_-_category_2-4" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0165::Broken spots - Category 2-4" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="tissue_malnutrition" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="terminal_cachexia" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0123::Terminal cachexia" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="single_organ_failure_respiratory_renal_cardiac_liver" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0124::Single organ failure (respiratory, renal, cardiac, liver)" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="multiple_organ_failure" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0125::Multiple organ failure" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="peripheral_vascular_disease" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0126::Peripheral vascular disease" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="anaemia" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0127::Anaemia" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="smoking" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0128::Smoking" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="neurological_deficit" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="diabetes_ms_cva" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0136::No neurological deficit" />
+                                <xs:enumeration value="at0137::Mild neurological deficit" />
+                                <xs:enumeration value="at0138::Moderate neurological deficit" />
+                                <xs:enumeration value="at0139::Severe neurological deficit" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="motor_sensory_deficit" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0136::No neurological deficit" />
+                                <xs:enumeration value="at0137::Mild neurological deficit" />
+                                <xs:enumeration value="at0138::Moderate neurological deficit" />
+                                <xs:enumeration value="at0139::Severe neurological deficit" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="paraplegia" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0136::No neurological deficit" />
+                                <xs:enumeration value="at0137::Mild neurological deficit" />
+                                <xs:enumeration value="at0138::Moderate neurological deficit" />
+                                <xs:enumeration value="at0139::Severe neurological deficit" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="combined_neurological_deficit" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0136::No neurological deficit" />
+                                <xs:enumeration value="at0137::Mild neurological deficit" />
+                                <xs:enumeration value="at0138::Moderate neurological deficit" />
+                                <xs:enumeration value="at0139::Severe neurological deficit" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="major_surgery_or_trauma" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="orthopaedic_spinal" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0153::No orthopaedic / spinal surgery" />
+                                <xs:enumeration value="at0143::Orthopaedic /spinal surgery" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="duration_of_surgery" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0154::On table &lt; 2 hrs or not in past 48 hrs" />
+                                <xs:enumeration value="at0145::On table &gt; 2 hrs (Past 48 hrs)" />
+                                <xs:enumeration value="at0146::On table &gt; 6 hrs (Past 48 hrs)" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="major_surgery_or_trauma_in_the_last_48_hours" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0157::No major surgery or trauma" />
+                                <xs:enumeration value="at0158::Orthopaedic / spinal surgery" />
+                                <xs:enumeration value="at0159::On table for more than 2 hours" />
+                                <xs:enumeration value="at0160::On table for more than 6 hours" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="medication" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="cytotoxics" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0141::No medication risk" />
+                                <xs:enumeration value="at0142::Significant medication risk" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="steroids" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0141::No medication risk" />
+                                <xs:enumeration value="at0142::Significant medication risk" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="anti-inflammatories" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0141::No medication risk" />
+                                <xs:enumeration value="at0142::Significant medication risk" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="combined_medication_risk" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0141::No medication risk" />
+                                <xs:enumeration value="at0142::Significant medication risk" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="confounding_factors" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="score_version" minOccurs="0" type="xs:string" />
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="body_weight" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="weight" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="magnitude" type="xs:decimal" />
+                          <xs:element name="unit">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="kg" />
+                                <xs:enumeration value="[lb_av]" />
+                                <xs:enumeration value="g" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                    <xs:element name="state_of_dress" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0013::Naked" />
+                          <xs:enumeration value="at0017::Nappy/diaper" />
+                          <xs:enumeration value="at0011::Lightly clothed/underwear" />
+                          <xs:enumeration value="at0028::Fully clothed, without shoes" />
+                          <xs:enumeration value="at0010::Fully clothed, including shoes" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="confounding_factors" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="reporting_status" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="measurement_input" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Actual" />
+                          <xs:enumeration value="Reported" />
+                          <xs:enumeration value="Estimated" />
+                          <xs:enumeration value="Other" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="estimated_date" minOccurs="0" type="xs:date" />
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="height_length" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="height_length" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="magnitude" type="xs:decimal" />
+                          <xs:element name="unit">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="cm" />
+                                <xs:enumeration value="[in_i]" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                    <xs:element name="position" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0016::Standing" />
+                          <xs:enumeration value="at0020::Lying" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="confounding_factors" minOccurs="0" type="xs:string" />
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="reporting_status" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="measurement_input" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Actual" />
+                          <xs:enumeration value="Reported" />
+                          <xs:enumeration value="Estimated" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="estimated_date" minOccurs="0" type="xs:date" />
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="body_mass_index" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="body_mass_index" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="magnitude" type="xs:decimal" />
+                          <xs:element name="unit">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="kg/m2" />
+                                <xs:enumeration value="[lb_av]/[in_i]2" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="clinical_interpretation" minOccurs="0" type="xs:string" />
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                    <xs:element name="confounding_factors" minOccurs="0" type="xs:string" />
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="method" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="at0007::Automatic entry" />
+                    <xs:enumeration value="at0008::Direct entry" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="formula" minOccurs="0" type="xs:string" />
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="category" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="433::event" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="composer" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:string" />
+              <xs:element name="id_scheme" type="xs:string" />
+              <xs:element name="id_namespace" type="xs:string" />
+              <xs:element name="name" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="template_id" fixed="Waterlow pressure damage risk assessment" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

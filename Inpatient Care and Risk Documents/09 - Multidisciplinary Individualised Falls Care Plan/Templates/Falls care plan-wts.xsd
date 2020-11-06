@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="multidisciplinary_individualised_falls_care_plan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="context">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="encounter_context" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="encounter_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_type" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_reason" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="appointment_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="xds_metadata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="author_specialty" minOccurs="0" type="xs:string" />
+                    <xs:element name="class_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="document_type" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="SNOMED-CT::414191008::Fall risk assessment (procedure)" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="confidentiality_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="health_care_facility_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="practice_setting_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="event_code" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="document_media" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="uri" type="xs:string" />
+                          <xs:element name="mediatype" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="start_time" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="setting" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="openehr::225::home" />
+                    <xs:enumeration value="openehr::227::emergency care" />
+                    <xs:enumeration value="openehr::228::primary medical care" />
+                    <xs:enumeration value="openehr::229::primary nursing care" />
+                    <xs:enumeration value="openehr::230::primary allied health care" />
+                    <xs:enumeration value="openehr::231::midwifery care" />
+                    <xs:enumeration value="openehr::232::secondary medical care" />
+                    <xs:enumeration value="openehr::233::secondary nursing care" />
+                    <xs:enumeration value="openehr::234::secondary allied health care" />
+                    <xs:enumeration value="openehr::235::complementary health care" />
+                    <xs:enumeration value="openehr::236::dental care" />
+                    <xs:enumeration value="openehr::237::nursing home care" />
+                    <xs:enumeration value="openehr::238::other care" />
+                    <xs:enumeration value="openehr::435::laboratory" />
+                    <xs:enumeration value="openehr::436::imaging" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="patient_falls_risk" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="assessment_date" minOccurs="0" type="xs:date" />
+              <xs:element name="patient_fall_risk_assessment" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="are_they_65_or_over" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="have_they_fallen_in_the_last_12_months" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="do_they_have_confusion" minOccurs="0" type="xs:boolean" />
+                    <xs:element name="do_you_believe_they_are_at_risk_of_falling" minOccurs="0" type="xs:boolean" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="fall_risk_assessment_result" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="at0015::Not At Risk Of Falling" />
+                    <xs:enumeration value="at0016::At Risk Of Falling" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="comment" minOccurs="0" type="xs:string" />
+              <xs:element name="last_updated" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="assessment_method" minOccurs="0" type="xs:string" />
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="patient_falls_risk_checklist" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="lying_and_standing_bp_completed" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="consider_elimination_needs" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="fear_of_falling" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="sensory_issues_eyesight_hearing" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="update_bed_board" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="patient_falls_history_taken" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="collateral_history" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="include_in_safety_briefing" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="high_low_and_bed_rails_assessment" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="bed_rails" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="high_low_bed" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="crash_mat_falls_alarm" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="medication_review" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="visible_bed_space" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="stay_close_toileting_call_bell_reminder_regular_check" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="vision_assessment_advice_given_in_self-referral_to_optician" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="additional_supervision" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="hourly_intentional_rounding" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="footwear" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="walking_aids" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                          <xs:element name="confirmation_sign" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:string" />
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="issuer" type="xs:string" />
+                                <xs:element name="assigner" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="last_updated" minOccurs="0" type="xs:date" />
+              <xs:element name="assessment_method" minOccurs="0" type="xs:string" />
+              <xs:element name="reporting_status" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="progress_status" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="code">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="0::In progress" />
+                                <xs:enumeration value="1::Completed" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="terminology">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="local_terms" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="other" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="estimated_date" minOccurs="0" type="xs:date" />
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="patient_measurements" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="vital_signs" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="blood_pressure_when_lying_for_5_mins" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="blood_pressure" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="systolic" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="magnitude">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:decimal">
+                                                  <xs:minInclusive value="0.0" />
+                                                  <xs:maxInclusive value="1000.0" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="unit">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="mm[Hg]" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="diastolic" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="magnitude">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:decimal">
+                                                  <xs:minInclusive value="0.0" />
+                                                  <xs:maxInclusive value="1000.0" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="unit">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="mm[Hg]" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="clinical_interpretation" minOccurs="0" type="xs:string" />
+                                      <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                      <xs:element name="position" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="at1000::Standing" />
+                                            <xs:enumeration value="at1001::Sitting" />
+                                            <xs:enumeration value="at1002::Reclining" />
+                                            <xs:enumeration value="at1003::Lying" />
+                                            <xs:enumeration value="at1014::Lying with tilt to left" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="confounding_factors" minOccurs="0" type="xs:string" />
+                                      <xs:element name="sleep_status" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="at1044::Awake" />
+                                            <xs:enumeration value="at1045::Sleeping" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="tilt" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="magnitude">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:decimal">
+                                                  <xs:minInclusive value="-90.0" />
+                                                  <xs:maxInclusive value="90.0" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="unit">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="deg" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="cuff_size" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0015::Adult Thigh" />
+                                      <xs:enumeration value="at0016::Large Adult" />
+                                      <xs:enumeration value="at0017::Adult" />
+                                      <xs:enumeration value="at1008::Small Adult" />
+                                      <xs:enumeration value="at1009::Paediatric/Child" />
+                                      <xs:enumeration value="at1018::Infant" />
+                                      <xs:enumeration value="at1019::Neonatal" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="location_of_measurement" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="code">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="at0025::Right arm" />
+                                            <xs:enumeration value="at0026::Left arm" />
+                                            <xs:enumeration value="at0027::Right thigh" />
+                                            <xs:enumeration value="at0028::Left thigh" />
+                                            <xs:enumeration value="at1020::Right wrist" />
+                                            <xs:enumeration value="at1021::Left wrist" />
+                                            <xs:enumeration value="at1026::Right ankle" />
+                                            <xs:enumeration value="at1031::Left ankle" />
+                                            <xs:enumeration value="at1032::Finger" />
+                                            <xs:enumeration value="at1051::Toe" />
+                                            <xs:enumeration value="at1056::Dorsum of foot" />
+                                            <xs:enumeration value="at1053::Intra-arterial" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="other" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="method" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at1036::Auscultation" />
+                                      <xs:enumeration value="at1037::Palpation" />
+                                      <xs:enumeration value="at1039::Machine" />
+                                      <xs:enumeration value="at1040::Invasive" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="diastolic_endpoint" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at1011::Phase IV" />
+                                      <xs:enumeration value="at1012::Phase V" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="medical_device" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="device_name" minOccurs="0" type="xs:string" />
+                                      <xs:element name="type" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Mercury sphygmomanometer" />
+                                            <xs:enumeration value="Aneroid sphygmomanometer" />
+                                            <xs:enumeration value="Electronic sphygmomanometer" />
+                                            <xs:enumeration value="Automated spot-check device" />
+                                            <xs:enumeration value="Wrist device" />
+                                            <xs:enumeration value="Finger device" />
+                                            <xs:enumeration value="Spot-check non-invasive blood pressure monitor" />
+                                            <xs:enumeration value="Automatic-cycling non-invasive blood pressure monitor" />
+                                            <xs:enumeration value="Ambulatory blood pressure monitor" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="unique_device_identifier_udi" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="manufacturer" minOccurs="0" type="xs:string" />
+                                      <xs:element name="serial_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="other_identifier" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="subject" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="id" type="xs:string" />
+                                      <xs:element name="id_scheme" type="xs:string" />
+                                      <xs:element name="id_namespace" type="xs:string" />
+                                      <xs:element name="name" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                                <xs:element name="subject" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="id" type="xs:string" />
+                                      <xs:element name="id_scheme" type="xs:string" />
+                                      <xs:element name="id_namespace" type="xs:string" />
+                                      <xs:element name="name" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="blood_pressure_when_standing_for_1_min" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="blood_pressure" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="systolic" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="magnitude">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:decimal">
+                                                  <xs:minInclusive value="0.0" />
+                                                  <xs:maxInclusive value="1000.0" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="unit">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="mm[Hg]" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="diastolic" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="magnitude">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:decimal">
+                                                  <xs:minInclusive value="0.0" />
+                                                  <xs:maxInclusive value="1000.0" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="unit">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="mm[Hg]" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="clinical_interpretation" minOccurs="0" type="xs:string" />
+                                      <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                      <xs:element name="position" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="at1000::Standing" />
+                                            <xs:enumeration value="at1001::Sitting" />
+                                            <xs:enumeration value="at1002::Reclining" />
+                                            <xs:enumeration value="at1003::Lying" />
+                                            <xs:enumeration value="at1014::Lying with tilt to left" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="confounding_factors" minOccurs="0" type="xs:string" />
+                                      <xs:element name="sleep_status" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="at1044::Awake" />
+                                            <xs:enumeration value="at1045::Sleeping" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="tilt" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="magnitude">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:decimal">
+                                                  <xs:minInclusive value="-90.0" />
+                                                  <xs:maxInclusive value="90.0" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="unit">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="deg" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="cuff_size" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0015::Adult Thigh" />
+                                      <xs:enumeration value="at0016::Large Adult" />
+                                      <xs:enumeration value="at0017::Adult" />
+                                      <xs:enumeration value="at1008::Small Adult" />
+                                      <xs:enumeration value="at1009::Paediatric/Child" />
+                                      <xs:enumeration value="at1018::Infant" />
+                                      <xs:enumeration value="at1019::Neonatal" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="location_of_measurement" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="code">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="at0025::Right arm" />
+                                            <xs:enumeration value="at0026::Left arm" />
+                                            <xs:enumeration value="at0027::Right thigh" />
+                                            <xs:enumeration value="at0028::Left thigh" />
+                                            <xs:enumeration value="at1020::Right wrist" />
+                                            <xs:enumeration value="at1021::Left wrist" />
+                                            <xs:enumeration value="at1026::Right ankle" />
+                                            <xs:enumeration value="at1031::Left ankle" />
+                                            <xs:enumeration value="at1032::Finger" />
+                                            <xs:enumeration value="at1051::Toe" />
+                                            <xs:enumeration value="at1056::Dorsum of foot" />
+                                            <xs:enumeration value="at1053::Intra-arterial" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="other" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="method" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at1036::Auscultation" />
+                                      <xs:enumeration value="at1037::Palpation" />
+                                      <xs:enumeration value="at1039::Machine" />
+                                      <xs:enumeration value="at1040::Invasive" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="mean_arterial_pressure_formula" minOccurs="0" type="xs:string" />
+                                <xs:element name="systolic_pressure_formula" minOccurs="0" type="xs:string" />
+                                <xs:element name="diastolic_pressure_formula" minOccurs="0" type="xs:string" />
+                                <xs:element name="diastolic_endpoint" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at1011::Phase IV" />
+                                      <xs:enumeration value="at1012::Phase V" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="medical_device" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="device_name" minOccurs="0" type="xs:string" />
+                                      <xs:element name="type" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Mercury sphygmomanometer" />
+                                            <xs:enumeration value="Aneroid sphygmomanometer" />
+                                            <xs:enumeration value="Electronic sphygmomanometer" />
+                                            <xs:enumeration value="Automated spot-check device" />
+                                            <xs:enumeration value="Wrist device" />
+                                            <xs:enumeration value="Finger device" />
+                                            <xs:enumeration value="Spot-check non-invasive blood pressure monitor" />
+                                            <xs:enumeration value="Automatic-cycling non-invasive blood pressure monitor" />
+                                            <xs:enumeration value="Ambulatory blood pressure monitor" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="unique_device_identifier_udi" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="manufacturer" minOccurs="0" type="xs:string" />
+                                      <xs:element name="serial_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="other_identifier" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="subject" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="id" type="xs:string" />
+                                      <xs:element name="id_scheme" type="xs:string" />
+                                      <xs:element name="id_namespace" type="xs:string" />
+                                      <xs:element name="name" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                                <xs:element name="subject" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="id" type="xs:string" />
+                                      <xs:element name="id_scheme" type="xs:string" />
+                                      <xs:element name="id_namespace" type="xs:string" />
+                                      <xs:element name="name" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="blood_pressure_when_standing_for_3_mins" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="blood_pressure" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="systolic" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="magnitude">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:decimal">
+                                                  <xs:minInclusive value="0.0" />
+                                                  <xs:maxInclusive value="1000.0" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="unit">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="mm[Hg]" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="diastolic" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="magnitude">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:decimal">
+                                                  <xs:minInclusive value="0.0" />
+                                                  <xs:maxInclusive value="1000.0" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="unit">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="mm[Hg]" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="clinical_interpretation" minOccurs="0" type="xs:string" />
+                                      <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                      <xs:element name="position" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="at1000::Standing" />
+                                            <xs:enumeration value="at1001::Sitting" />
+                                            <xs:enumeration value="at1002::Reclining" />
+                                            <xs:enumeration value="at1003::Lying" />
+                                            <xs:enumeration value="at1014::Lying with tilt to left" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="confounding_factors" minOccurs="0" type="xs:string" />
+                                      <xs:element name="sleep_status" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="at1044::Awake" />
+                                            <xs:enumeration value="at1045::Sleeping" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="tilt" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="magnitude">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:decimal">
+                                                  <xs:minInclusive value="-90.0" />
+                                                  <xs:maxInclusive value="90.0" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="unit">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="deg" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="cuff_size" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at0015::Adult Thigh" />
+                                      <xs:enumeration value="at0016::Large Adult" />
+                                      <xs:enumeration value="at0017::Adult" />
+                                      <xs:enumeration value="at1008::Small Adult" />
+                                      <xs:enumeration value="at1009::Paediatric/Child" />
+                                      <xs:enumeration value="at1018::Infant" />
+                                      <xs:enumeration value="at1019::Neonatal" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="location_of_measurement" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="code">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="at0025::Right arm" />
+                                            <xs:enumeration value="at0026::Left arm" />
+                                            <xs:enumeration value="at0027::Right thigh" />
+                                            <xs:enumeration value="at0028::Left thigh" />
+                                            <xs:enumeration value="at1020::Right wrist" />
+                                            <xs:enumeration value="at1021::Left wrist" />
+                                            <xs:enumeration value="at1026::Right ankle" />
+                                            <xs:enumeration value="at1031::Left ankle" />
+                                            <xs:enumeration value="at1032::Finger" />
+                                            <xs:enumeration value="at1051::Toe" />
+                                            <xs:enumeration value="at1056::Dorsum of foot" />
+                                            <xs:enumeration value="at1053::Intra-arterial" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="other" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="method" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at1036::Auscultation" />
+                                      <xs:enumeration value="at1037::Palpation" />
+                                      <xs:enumeration value="at1039::Machine" />
+                                      <xs:enumeration value="at1040::Invasive" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="mean_arterial_pressure_formula" minOccurs="0" type="xs:string" />
+                                <xs:element name="systolic_pressure_formula" minOccurs="0" type="xs:string" />
+                                <xs:element name="diastolic_pressure_formula" minOccurs="0" type="xs:string" />
+                                <xs:element name="diastolic_endpoint" minOccurs="0">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="at1011::Phase IV" />
+                                      <xs:enumeration value="at1012::Phase V" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="medical_device" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="device_name" minOccurs="0" type="xs:string" />
+                                      <xs:element name="type" minOccurs="0">
+                                        <xs:simpleType>
+                                          <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Mercury sphygmomanometer" />
+                                            <xs:enumeration value="Aneroid sphygmomanometer" />
+                                            <xs:enumeration value="Electronic sphygmomanometer" />
+                                            <xs:enumeration value="Automated spot-check device" />
+                                            <xs:enumeration value="Wrist device" />
+                                            <xs:enumeration value="Finger device" />
+                                            <xs:enumeration value="Spot-check non-invasive blood pressure monitor" />
+                                            <xs:enumeration value="Automatic-cycling non-invasive blood pressure monitor" />
+                                            <xs:enumeration value="Ambulatory blood pressure monitor" />
+                                          </xs:restriction>
+                                        </xs:simpleType>
+                                      </xs:element>
+                                      <xs:element name="description" minOccurs="0" type="xs:string" />
+                                      <xs:element name="unique_device_identifier_udi" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="manufacturer" minOccurs="0" type="xs:string" />
+                                      <xs:element name="serial_number" minOccurs="0" type="xs:string" />
+                                      <xs:element name="other_identifier" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:string" />
+                                            <xs:element name="type" type="xs:string" />
+                                            <xs:element name="issuer" type="xs:string" />
+                                            <xs:element name="assigner" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="comment" minOccurs="0" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="subject" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="id" type="xs:string" />
+                                      <xs:element name="id_scheme" type="xs:string" />
+                                      <xs:element name="id_namespace" type="xs:string" />
+                                      <xs:element name="name" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="exclusion_of_examination" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="reason" minOccurs="0" type="xs:string" />
+                                <xs:element name="subject" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="id" type="xs:string" />
+                                      <xs:element name="id_scheme" type="xs:string" />
+                                      <xs:element name="id_namespace" type="xs:string" />
+                                      <xs:element name="name" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="category" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="433::event" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="composer" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:string" />
+              <xs:element name="id_scheme" type="xs:string" />
+              <xs:element name="id_namespace" type="xs:string" />
+              <xs:element name="name" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="template_id" fixed="Falls care plan" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
