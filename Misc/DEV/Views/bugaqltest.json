@@ -1,0 +1,1 @@
+{"name":"bugaqltest","category":"view","description":"bugaqltest","metaData":null,"steps":[{"processorName":"jsonFtlAql","processorData":"SELECT p/items[at0001]/value as Description,\r\n       p/items[at0002]/value as Date\r\nFROM EHR e\r\nCONTAINS COMPOSITION c\r\nCONTAINS CLUSTER p[openEHR-EHR-CLUSTER.generic_assessment.v0] \r\nOFFSET 0 LIMIT 1"}]}

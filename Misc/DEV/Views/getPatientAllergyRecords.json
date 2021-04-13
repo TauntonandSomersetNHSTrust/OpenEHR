@@ -1,0 +1,1 @@
+{"name":"getPatientAllergyRecords","category":"view","description":"get all allergy records for a patient","metaData":null,"steps":[{"processorName":"jsonFtlAql","processorData":"select c\r\nfrom ehr e [ehr_id/value=:ehrId]\r\ncontains composition c\r\nwhere c/name/value = 'Adverse reaction list'"}]}

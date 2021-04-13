@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="body_map">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="context">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="xds_metadata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="author_specialty" minOccurs="0" type="xs:string" />
+                    <xs:element name="class_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="document_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="confidentiality_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="health_care_facility_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="practice_setting_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="event_code" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="document_media" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="uri" type="xs:string" />
+                          <xs:element name="mediatype" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="document_metadata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="document_status" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0002::Approved" />
+                          <xs:enumeration value="at0003::Draft" />
+                          <xs:enumeration value="at0004::Recorded In Error" />
+                          <xs:enumeration value="at0005::Final" />
+                          <xs:enumeration value="at0008::Superseeded" />
+                          <xs:enumeration value="at0009::Archived" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="document_tags" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="tag_name" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="document_references" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="reference" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="reference" minOccurs="0" type="xs:string" />
+                                <xs:element name="type" minOccurs="0" type="xs:string" />
+                                <xs:element name="identifier" minOccurs="0" type="xs:string" />
+                                <xs:element name="display_text" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="encounter_context" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="encounter_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_type" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_reason" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="appointment_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="start_time" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="setting" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="openehr::225::home" />
+                    <xs:enumeration value="openehr::227::emergency care" />
+                    <xs:enumeration value="openehr::228::primary medical care" />
+                    <xs:enumeration value="openehr::229::primary nursing care" />
+                    <xs:enumeration value="openehr::230::primary allied health care" />
+                    <xs:enumeration value="openehr::231::midwifery care" />
+                    <xs:enumeration value="openehr::232::secondary medical care" />
+                    <xs:enumeration value="openehr::233::secondary nursing care" />
+                    <xs:enumeration value="openehr::234::secondary allied health care" />
+                    <xs:enumeration value="openehr::235::complementary health care" />
+                    <xs:enumeration value="openehr::236::dental care" />
+                    <xs:enumeration value="openehr::237::nursing home care" />
+                    <xs:enumeration value="openehr::238::other care" />
+                    <xs:enumeration value="openehr::435::laboratory" />
+                    <xs:enumeration value="openehr::436::imaging" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="generic_assessments" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="assessment_date" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="assessment_comment" minOccurs="0" type="xs:string" />
+              <xs:element name="assessments" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="body_part_observation" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="body_part" minOccurs="0" type="xs:string" />
+                          <xs:element name="body_map_section_number" minOccurs="0" maxOccurs="unbounded" type="xs:int" />
+                          <xs:element name="comment_group" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="body_part_coded" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="1::1 - Head Right" />
+                                      <xs:enumeration value="2::2 - Head Left" />
+                                      <xs:enumeration value="3::3 - Neck" />
+                                      <xs:enumeration value="4::4 - Shoulder/Chest Right" />
+                                      <xs:enumeration value="5::5 - Shoulder/Chest Left" />
+                                      <xs:enumeration value="6::6 - Upper Arm Right" />
+                                      <xs:enumeration value="7::7 - Upper Arm Left" />
+                                      <xs:enumeration value="8::8 - Lower Arm Right" />
+                                      <xs:enumeration value="9::9 - Lower Arm Left" />
+                                      <xs:enumeration value="10::10 - Wrist Right" />
+                                      <xs:enumeration value="11::11 - Wrist Left" />
+                                      <xs:enumeration value="12::12 - Hand Right" />
+                                      <xs:enumeration value="13::13 - Hand Left" />
+                                      <xs:enumeration value="14::14 - Upper Abdomen Right" />
+                                      <xs:enumeration value="15::15 - Upper Abdomen Left" />
+                                      <xs:enumeration value="16::16 - Lower Abdomen Right" />
+                                      <xs:enumeration value="17::17 - Lower Abdomen Left" />
+                                      <xs:enumeration value="18::18 - Hip/Pelvis Right" />
+                                      <xs:enumeration value="19::19 - Hip/Pelvis Right" />
+                                      <xs:enumeration value="20::20 - Pubic Region" />
+                                      <xs:enumeration value="21::21 - Upper Leg Right" />
+                                      <xs:enumeration value="22::22 - Upper Leg Left" />
+                                      <xs:enumeration value="23::23 - Knee Right" />
+                                      <xs:enumeration value="24::24 - Knee Left" />
+                                      <xs:enumeration value="25::25 - Lower Leg Right" />
+                                      <xs:enumeration value="26::26 - Lower Leg Left" />
+                                      <xs:enumeration value="27::27 - Foot Right" />
+                                      <xs:enumeration value="28::28 - Foot Left" />
+                                      <xs:enumeration value="29::29 - Head Left" />
+                                      <xs:enumeration value="30::30 - Head Right" />
+                                      <xs:enumeration value="31::31 - Neck" />
+                                      <xs:enumeration value="32::32 - Upper Torso/Shoulders" />
+                                      <xs:enumeration value="33::33 - Upper Arm Left" />
+                                      <xs:enumeration value="34::34 - Upper Arm Right" />
+                                      <xs:enumeration value="35::35 - Elbow Left" />
+                                      <xs:enumeration value="36::36 - Elbow right" />
+                                      <xs:enumeration value="37::37 - Lower Arm Left" />
+                                      <xs:enumeration value="38::38 - Lower Arm Right" />
+                                      <xs:enumeration value="39::39 - Wrist Left" />
+                                      <xs:enumeration value="40::40 - Wrist Right" />
+                                      <xs:enumeration value="41::41 - Hand Left" />
+                                      <xs:enumeration value="42::42 - Hand Right" />
+                                      <xs:enumeration value="43::43 - Mid Torso" />
+                                      <xs:enumeration value="44::44 - Lower Back" />
+                                      <xs:enumeration value="45::45 - Sacrum" />
+                                      <xs:enumeration value="46::46 - Buttock/Hip Left" />
+                                      <xs:enumeration value="47::47 - Buttock/Hip Right" />
+                                      <xs:enumeration value="48::48 - Upper Leg Left" />
+                                      <xs:enumeration value="49::49 - Upper Leg Right" />
+                                      <xs:enumeration value="50::50 - Lower Leg Left" />
+                                      <xs:enumeration value="51::51 - Lower Leg Right" />
+                                      <xs:enumeration value="52::52 - Heel Left" />
+                                      <xs:enumeration value="53::53 - Heel Right" />
+                                      <xs:enumeration value="54::54 - Sole Of Foot Left" />
+                                      <xs:enumeration value="55::55 - Sole Of Foot Right" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="comment" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="no_issues_found" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="check_group" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="comprehensive_check_completed" minOccurs="0" type="xs:boolean" />
+                                <xs:element name="exclusion_of_examination" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="examination_not_done" minOccurs="0" type="xs:boolean" />
+                                      <xs:element name="reason" minOccurs="0" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="multimedia_resource" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="name" minOccurs="0" type="xs:string" />
+                                <xs:element name="description" minOccurs="0" type="xs:string" />
+                                <xs:element name="multimedia" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="uri" type="xs:string" />
+                                      <xs:element name="mediatype" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="url" minOccurs="0" type="xs:string" />
+                                <xs:element name="source" minOccurs="0" type="xs:string" />
+                                <xs:element name="author" minOccurs="0" type="xs:string" />
+                                <xs:element name="date_created" minOccurs="0" type="xs:dateTime" />
+                                <xs:element name="date_published" minOccurs="0" type="xs:dateTime" />
+                                <xs:element name="version" minOccurs="0" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="last_updated" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="category" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="433::event" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="composer" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:string" />
+              <xs:element name="id_scheme" type="xs:string" />
+              <xs:element name="id_namespace" type="xs:string" />
+              <xs:element name="name" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="template_id" fixed="bodymap" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

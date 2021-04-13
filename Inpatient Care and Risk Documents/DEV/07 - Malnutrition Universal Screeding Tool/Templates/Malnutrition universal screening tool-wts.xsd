@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="malnutrition_universal_screening_tool">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="context">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="xds_metadata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="author_specialty" minOccurs="0" type="xs:string" />
+                    <xs:element name="class_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="document_type" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="SNOMED-CT::443216009::Assessment using malnutrition universal screening tool" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="confidentiality_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="health_care_facility_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="practice_setting_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="event_code" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="document_media" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="uri" type="xs:string" />
+                          <xs:element name="mediatype" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="encounter_context" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="encounter_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_type" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_reason" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="appointment_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="start_time" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="setting" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="openehr::225::home" />
+                    <xs:enumeration value="openehr::227::emergency care" />
+                    <xs:enumeration value="openehr::228::primary medical care" />
+                    <xs:enumeration value="openehr::229::primary nursing care" />
+                    <xs:enumeration value="openehr::230::primary allied health care" />
+                    <xs:enumeration value="openehr::231::midwifery care" />
+                    <xs:enumeration value="openehr::232::secondary medical care" />
+                    <xs:enumeration value="openehr::233::secondary nursing care" />
+                    <xs:enumeration value="openehr::234::secondary allied health care" />
+                    <xs:enumeration value="openehr::235::complementary health care" />
+                    <xs:enumeration value="openehr::236::dental care" />
+                    <xs:enumeration value="openehr::237::nursing home care" />
+                    <xs:enumeration value="openehr::238::other care" />
+                    <xs:enumeration value="openehr::435::laboratory" />
+                    <xs:enumeration value="openehr::436::imaging" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="malnutrition_universal_screening_tool_must" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="body_mass_index_score" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="at0005::&gt;20 (&gt;30 Obese)" />
+                    <xs:enumeration value="at0006::18.5 -20" />
+                    <xs:enumeration value="at0007::&lt;18.5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="weight_loss_score" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="at0009::&lt;5 %" />
+                    <xs:enumeration value="at0010::5-10 %" />
+                    <xs:enumeration value="at0011::&gt;10 %" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nutritional_intake_acute_disease_effect_score" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="at0013::Not acutely ill and sufficient nutritional intake for &gt;5 days" />
+                    <xs:enumeration value="at0014::Acutely ill and there has been or is likely to be no nutritional intake for &gt;5 days" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="total_score" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:int">
+                    <xs:minInclusive value="0" />
+                    <xs:maxInclusive value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="risk_category" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="at0017::Low risk" />
+                    <xs:enumeration value="at0018::Medium risk" />
+                    <xs:enumeration value="at0019::High risk" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="evaluation_period" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="On admission" />
+                    <xs:enumeration value="Week 1" />
+                    <xs:enumeration value="Week 2" />
+                    <xs:enumeration value="Week 3" />
+                    <xs:enumeration value="Week 4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="confounding_factors" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+              <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="height_determination_method_for_body_mass_index" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="at0023::Direct height measurement" />
+                    <xs:enumeration value="at0024::Recently documented or self-reported height" />
+                    <xs:enumeration value="at0025::Derived from ulna length" />
+                    <xs:enumeration value="at0026::Derived from knee height" />
+                    <xs:enumeration value="at0027::Derived from demispan" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="weight_determination_method_for_body_mass_index" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="at0028::Direct weight measurement" />
+                    <xs:enumeration value="at0029::Recently documented or self-reported weight" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="body_mass_index_estimation_method" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="at0031::Calculation from height and weight measurements" />
+                    <xs:enumeration value="at0032::Derived from mid upper arm circumference measurement" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="weight_loss_determination_method" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="at0034::Direct weight change measurement" />
+                    <xs:enumeration value="at0035::Recently documented or self-reported weight change" />
+                    <xs:enumeration value="at0036::Clinical impression" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="body_weight" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="weight" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="magnitude" type="xs:decimal" />
+                          <xs:element name="unit">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="kg" />
+                                <xs:enumeration value="[lb_av]" />
+                                <xs:enumeration value="g" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="reporting_status" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="measurement_input" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Actual" />
+                          <xs:enumeration value="Reported" />
+                          <xs:enumeration value="Estimated" />
+                          <xs:enumeration value="Other" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="estimated_date" minOccurs="0" type="xs:date" />
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="height_length" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="height_length" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="magnitude" type="xs:decimal" />
+                          <xs:element name="unit">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="cm" />
+                                <xs:enumeration value="[in_i]" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="reporting_status" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="measurement_input" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Actual" />
+                          <xs:enumeration value="Reported" />
+                          <xs:enumeration value="Estimated" />
+                          <xs:enumeration value="Ulna length actual" />
+                          <xs:enumeration value="Ulna length reported" />
+                          <xs:enumeration value="Ulna length estimated" />
+                          <xs:enumeration value="Other" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="estimated_date" minOccurs="0" type="xs:date" />
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="body_mass_index" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="body_mass_index" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="magnitude" type="xs:decimal" />
+                          <xs:element name="unit">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="kg/m2" />
+                                <xs:enumeration value="[lb_av]/[in_i]2" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="management_guidelines" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="proposed_activities" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Routine clinical care - Use nutrition care plan." />
+                    <xs:enumeration value="Observe - Refer to nutrition care plan for MUST 1." />
+                    <xs:enumeration value="Treat - Refer to nutrition care plan for MUST 2+ OR if patient is unable to eat and artificial nutrition (e.g. NG, PN) is appropriate, please refer immediately to Dietitian." />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="comment" minOccurs="0" type="xs:string" />
+              <xs:element name="last_updated" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="guideline" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" minOccurs="0" type="xs:string" />
+                    <xs:element name="version" minOccurs="0" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="body_segment_-_length" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="body_segment" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Elbow to wrist" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="laterality" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="at0006::Left" />
+                          <xs:enumeration value="at0007::Right" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="length" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="magnitude" type="xs:decimal" />
+                          <xs:element name="unit">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="cm" />
+                                <xs:enumeration value="[in_i]" />
+                                <xs:enumeration value="mm" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="comment" minOccurs="0" type="xs:string" />
+                    <xs:element name="confounding_factors" minOccurs="0" type="xs:string" />
+                    <xs:element name="body_position" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="code">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0036::Standing" />
+                                <xs:enumeration value="at0037::Sitting" />
+                                <xs:enumeration value="at0038::Reclining" />
+                                <xs:enumeration value="at0039::Lying" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="other" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="measurement_method" minOccurs="0" type="xs:string" />
+              <xs:element name="measurement_origin" minOccurs="0" type="xs:string" />
+              <xs:element name="measurement_endpoint" minOccurs="0" type="xs:string" />
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="weight_loss_comparison" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="body_weight_3_to_6_months_ago" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="last_3_to_6_month_ago" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="weight" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="magnitude" type="xs:decimal" />
+                                <xs:element name="unit">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="kg" />
+                                      <xs:enumeration value="[lb_av]" />
+                                      <xs:enumeration value="g" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="reporting_status" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="measurement_input" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="Actual" />
+                                <xs:enumeration value="Reported" />
+                                <xs:enumeration value="Estimated" />
+                                <xs:enumeration value="Other" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="estimated_date" minOccurs="0" type="xs:date" />
+                          <xs:element name="comment" minOccurs="0" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="subject" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="id" type="xs:string" />
+                          <xs:element name="id_scheme" type="xs:string" />
+                          <xs:element name="id_namespace" type="xs:string" />
+                          <xs:element name="name" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="absence_of_information" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="absence_statement" minOccurs="0" type="xs:string" />
+                    <xs:element name="reason_for_absence" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="last_updated" minOccurs="0" type="xs:dateTime" />
+                    <xs:element name="subject" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="id" type="xs:string" />
+                          <xs:element name="id_scheme" type="xs:string" />
+                          <xs:element name="id_namespace" type="xs:string" />
+                          <xs:element name="name" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="category" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="433::event" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="composer" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:string" />
+              <xs:element name="id_scheme" type="xs:string" />
+              <xs:element name="id_namespace" type="xs:string" />
+              <xs:element name="name" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="template_id" fixed="Malnutrition universal screening tool" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="bed_rail_and_low_bed_risk_assessment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="context">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="encounter_context" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="encounter_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_type" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="encounter_reason" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="appointment_id" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="xds_metadata" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="author_specialty" minOccurs="0" type="xs:string" />
+                    <xs:element name="class_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="document_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="confidentiality_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="health_care_facility_type" minOccurs="0" type="xs:string" />
+                    <xs:element name="practice_setting_code" minOccurs="0" type="xs:string" />
+                    <xs:element name="event_code" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="document_media" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="uri" type="xs:string" />
+                          <xs:element name="mediatype" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="start_time" minOccurs="0" type="xs:dateTime" />
+              <xs:element name="setting" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="openehr::225::home" />
+                    <xs:enumeration value="openehr::227::emergency care" />
+                    <xs:enumeration value="openehr::228::primary medical care" />
+                    <xs:enumeration value="openehr::229::primary nursing care" />
+                    <xs:enumeration value="openehr::230::primary allied health care" />
+                    <xs:enumeration value="openehr::231::midwifery care" />
+                    <xs:enumeration value="openehr::232::secondary medical care" />
+                    <xs:enumeration value="openehr::233::secondary nursing care" />
+                    <xs:enumeration value="openehr::234::secondary allied health care" />
+                    <xs:enumeration value="openehr::235::complementary health care" />
+                    <xs:enumeration value="openehr::236::dental care" />
+                    <xs:enumeration value="openehr::237::nursing home care" />
+                    <xs:enumeration value="openehr::238::other care" />
+                    <xs:enumeration value="openehr::435::laboratory" />
+                    <xs:enumeration value="openehr::436::imaging" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="lrlb_risk_assessment">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="any_event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="assessment_date" minOccurs="0" type="xs:dateTime" />
+                    <xs:element name="initial_assessment">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="patient_is_unlikely_faller_and_not_requesting_bed_rails" minOccurs="0" type="xs:boolean" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="stage_1" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="patient_is_likely_to_attempt_to_get_out_of_bed_alone_and_or_previously_attempted_whilst_bedrails_in_use" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="patient_is_restless_uncontrolled_limb_movements_significant_confusion_excluding_seizures" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="patient_is_a_likely_or_possible_faller_but_declining_bedrail_use" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="patient_has_difficulty_rolling_over_in_bed_-_bed_rail_will_assist_independence" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="cve_disruption_in_spatial_visual_awareness._at_risk_of_rolling_out_bed._patient_unlikely_to_get_out_of_bed" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="patient_has_requested_bed_rails_or_uses_bed_rails_at_home" minOccurs="0" type="xs:boolean" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="stage_2" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="requires_assistance_of_1_or_more_staff_to_stand" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="able_to_stand_without_assistance" minOccurs="0" type="xs:boolean" />
+                          <xs:element name="bed_rail_in_good_condition_and_detachable_rail_fitted_correctly" minOccurs="0" type="xs:boolean" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="final_result">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="at0021::Do not use bed rails. Use low bed. Consider floor mats. Consider increased patient supervision." />
+                                <xs:enumeration value="at0022::Do not use bed rails. Do not use low bed. Keep bed on lowest level to allow sit to stand. Consider increased patient supervision." />
+                                <xs:enumeration value="at0023::Use bed rail. Ensure bed rail is in good condition. Consider increased patient supervision." />
+                                <xs:enumeration value="at0024::Bed rail to be used on standard bed. Ensure bed rail is in good condition. Supervision not required." />
+                                <xs:enumeration value="at0025::Patient is unlikely faller - no further assessment is required." />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="time" minOccurs="0" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="subject" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="id_scheme" type="xs:string" />
+                    <xs:element name="id_namespace" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="category" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="433::event" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="composer" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:string" />
+              <xs:element name="id_scheme" type="xs:string" />
+              <xs:element name="id_namespace" type="xs:string" />
+              <xs:element name="name" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="template_id" fixed="Bed rail and low bed risk assessment" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
