@@ -1,0 +1,673 @@
+archetype (adl_version=1.4; uid=0eebb638-3b9f-4cc2-a166-e346f21bfffa)
+	openEHR-EHR-EVALUATION.critical_care_pre_referral_information.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2020-03-23">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"0429df722c0aa13f7d7ae8a7ca8b8142">
+		["build_uid"] = <"cfd7a79e-289a-32e6-83eb-a87087abe39d">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Critical Care Pre Referral Information
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] matches {    -- Assessment Date
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					CLUSTER[at0003] occurrences matches {0..1} matches {    -- Patient Capacity
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0004] matches {    -- Exertional Capacity
+								value matches {
+									1|[local::at0022],
+									2|[local::at0023],
+									3|[local::at0024],
+									4|[local::at0025],
+									5|[local::at0026],
+									6|[local::at0027],
+									7|[local::at0028]
+								}
+							}
+							ELEMENT[at0005] occurrences matches {0..*} matches {    -- Exertional Limitations
+								value matches {
+									1|[local::at0029],
+									2|[local::at0030],
+									3|[local::at0031],
+									4|[local::at0032],
+									5|[local::at0033],
+									6|[local::at0034]
+								}
+							}
+							ELEMENT[at0006] matches {    -- Cognitive Function
+								value matches {
+									1|[local::at0035],
+									2|[local::at0036],
+									3|[local::at0037],
+									4|[local::at0038]
+								}
+							}
+							ELEMENT[at0007] matches {    -- Assistance at Home
+								value matches {
+									1|[local::at0039],
+									2|[local::at0040],
+									3|[local::at0041],
+									4|[local::at0042],
+									5|[local::at0043]
+								}
+							}
+							ELEMENT[at0008] occurrences matches {0..1} matches {    -- Health and Functional Trajectory over last 12 months
+								value matches {
+									1|[local::at0044],
+									2|[local::at0045],
+									3|[local::at0046],
+									4|[local::at0047]
+								}
+							}
+						}
+					}
+					CLUSTER[at0009] occurrences matches {0..1} matches {    -- Frailty
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0010] matches {    -- Frailty Score
+								value matches {
+									1|[local::at0048],
+									2|[local::at0049],
+									3|[local::at0050],
+									4|[local::at0051],
+									5|[local::at0052],
+									6|[local::at0053],
+									7|[local::at0054],
+									8|[local::at0055],
+									9|[local::at0056]
+								}
+							}
+						}
+					}
+					CLUSTER[at0012] occurrences matches {0..1} matches {    -- Other relevant information
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0013] occurrences matches {0..1} matches {    -- Other
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0014] occurrences matches {0..1} matches {    -- Patient wishes and expectations
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0015] occurrences matches {0..1} matches {    -- Willing to be in hospital for long perod?
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0016] occurrences matches {0..1} matches {    -- Willing to be less independent?
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0017] occurrences matches {0..1} matches {    -- Accept risk of problems with cognitive function?
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0018] occurrences matches {0..1} matches {    -- Comments
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0019] occurrences matches {0..1} matches {    -- Co-morbidities
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0020] occurrences matches {0..*} matches {    -- Co-morbidities
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0021] occurrences matches {0..1} matches {    -- Other
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							CLUSTER[at0067] occurrences matches {0..1} matches {    -- Myocardial Infarction
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0058] occurrences matches {0..1} matches {    -- Myocardial infarction occurred
+										value matches {
+											1|[local::at0059],
+											2|[local::at0060]
+										}
+									}
+									ELEMENT[at0095] occurrences matches {0..1} matches {    -- Recent angina
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0096] occurrences matches {0..1} matches {    -- Cardiac Dysfunction
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0101] occurrences matches {0..1} matches {    -- Most Recent Known EF
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::380]>
+												list = <
+													["1"] = <
+														units = <"%">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0102] occurrences matches {0..1} matches {    -- Other Significant Structural Or Functional Problems
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0073] occurrences matches {0..1} matches {    -- Cerebrovascular
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0061] occurrences matches {0..1} matches {    -- Cerebrovascular details
+										value matches {
+											1|[local::at0083],
+											2|[local::at0084],
+											3|[local::at0085],
+											4|[local::at0086]
+										}
+									}
+								}
+							}
+							CLUSTER[at0071] occurrences matches {0..1} matches {    -- Chronic Respiratory Disease
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0087] occurrences matches {0..1} matches {    -- Chronic Respiratory Disease type
+										value matches {
+											DV_CODED_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0064] occurrences matches {0..1} matches {    -- Chronic Respiratory Other
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0065] occurrences matches {0..1} matches {    -- Chronic Respiratory Disease Severity
+										value matches {
+											1|[local::at0088],
+											2|[local::at0089],
+											3|[local::at0090]
+										}
+									}
+								}
+							}
+							CLUSTER[at0074] occurrences matches {0..1} matches {    -- Chronic Kidney Disease
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0063] occurrences matches {0..1} matches {    -- Chronic Kidney Disease Details
+										value matches {
+											1|[local::at0091],
+											2|[local::at0092],
+											3|[local::at0093],
+											4|[local::at0094]
+										}
+									}
+									ELEMENT[at0103] occurrences matches {0..1} matches {    -- Chronic Kidney Disease Details Stage
+										value matches {
+											1|[local::at0104],
+											2|[local::at0105],
+											3|[local::at0106],
+											4|[local::at0107],
+											5|[local::at0108],
+											6|[local::at0109]
+										}
+									}
+								}
+							}
+							CLUSTER[at0075] occurrences matches {0..1} matches {    -- Liver Disease
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0079] occurrences matches {0..1} matches {    -- Alcohol Related
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0110] occurrences matches {0..1} matches {    -- Child-Pugh score
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0111] occurrences matches {0..1} matches {    -- MELD score
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0077] occurrences matches {0..1} matches {    -- Malignancy
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0078] occurrences matches {0..1} matches {    -- Malignancy details
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Critical Care Pre Referral Information">
+					description = <"Critical Care Pre Referral Information">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Assessment Date">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Patient Capacity">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Exertional Capacity">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Exertional Limitations">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Cognitive Function">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Assistance at Home">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Health and Functional Trajectory over last 12 months">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Frailty">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Frailty Score">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Other relevant information">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Other">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Patient wishes and expectations">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Willing to be in hospital for long perod?">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Willing to be less independent?">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Accept risk of problems with cognitive function?">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Comments">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Co-morbidities">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Co-morbidities">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Other">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Very Fit">
+					description = <"Not lmited, could walk >5 miles">
+				>
+				["at0023"] = <
+					text = <"Fit">
+					description = <"Could walk 3 miles with hills">
+				>
+				["at0024"] = <
+					text = <"Mild Limitation">
+					description = <"Could walk 3 miles on the flat, small hills">
+				>
+				["at0025"] = <
+					text = <"Moderate Limitation">
+					description = <"Could walk 1 mile, hills difficult">
+				>
+				["at0026"] = <
+					text = <"Significant Limitation">
+					description = <"Slow walk to shops, stairs difficult">
+				>
+				["at0027"] = <
+					text = <"Severe Limitation">
+					description = <"Mobile around hourse and garden only">
+				>
+				["at0028"] = <
+					text = <"Very Restricted">
+					description = <"Mobile around house only, leaves house only with assistance">
+				>
+				["at0029"] = <
+					text = <"Musculoskeletal Restriction">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Neurological Problem">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Balance">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Pain">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Breathlessness">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Chest Pain or Tightness">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Not Impaired">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Mildly Impaired">
+					description = <"Minimal impact on daily function">
+				>
+				["at0037"] = <
+					text = <"Moderately impaired">
+					description = <"Some clear impact on daily function">
+				>
+				["at0038"] = <
+					text = <"Severely Impaired">
+					description = <"Help needed with most tasks">
+				>
+				["at0039"] = <
+					text = <"Independent">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Occasional Help (not daily)">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Daily Help, single visit">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"Daily Help, multiple daily visits">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Live-in or Fulltime Carer">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"No Change">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Slight Change">
+					description = <"Minimal impact on function">
+				>
+				["at0046"] = <
+					text = <"Moderate Decline">
+					description = <"Some reduction in function">
+				>
+				["at0047"] = <
+					text = <"Marked Decline">
+					description = <"Significant reduction in function noted by family or carers">
+				>
+				["at0048"] = <
+					text = <"Very Fit">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Well">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Managing Well">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Vulnerable">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Mildly Frail">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Moderately Frail">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"Severely Frail">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"Very Severely Frail">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Terminally Ill">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Myocardial infarction occurred">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"< 2 years">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"> 2 years">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Cerebrovascular details">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"Chronic Kidney Disease Details">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"Chronic Respiratory Other">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"Chronic Respiratory Disease Severity">
+					description = <"*">
+				>
+				["at0067"] = <
+					text = <"Myocardial Infarction">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"Chronic Respiratory Disease">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"Cerebrovascular">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"Chronic Kidney Disease">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"Liver Disease">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"Malignancy">
+					description = <"*">
+				>
+				["at0078"] = <
+					text = <"Malignancy details">
+					description = <"*">
+				>
+				["at0079"] = <
+					text = <"Alcohol Related">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"Single TIA">
+					description = <"*">
+				>
+				["at0084"] = <
+					text = <"Multiple TIAs">
+					description = <"*">
+				>
+				["at0085"] = <
+					text = <"CVE with resolved impairment">
+					description = <"*">
+				>
+				["at0086"] = <
+					text = <"CVE with residual impairment">
+					description = <"*">
+				>
+				["at0087"] = <
+					text = <"Chronic Respiratory Disease type">
+					description = <"*">
+				>
+				["at0088"] = <
+					text = <"Mild">
+					description = <"*">
+				>
+				["at0089"] = <
+					text = <"Moderate">
+					description = <"*">
+				>
+				["at0090"] = <
+					text = <"Severe">
+					description = <"*">
+				>
+				["at0091"] = <
+					text = <"Improving">
+					description = <"*">
+				>
+				["at0092"] = <
+					text = <"Stable">
+					description = <"*">
+				>
+				["at0093"] = <
+					text = <"Deteriorating">
+					description = <"*">
+				>
+				["at0094"] = <
+					text = <"Dialysis being considered">
+					description = <"*">
+				>
+				["at0095"] = <
+					text = <"Recent angina">
+					description = <"*">
+				>
+				["at0096"] = <
+					text = <"Cardiac Dysfunction">
+					description = <"*">
+				>
+				["at0101"] = <
+					text = <"Most Recent Known EF">
+					description = <"*">
+				>
+				["%"] = <
+					text = <"%">
+					description = <"%">
+				>
+				["at0102"] = <
+					text = <"Other Significant Structural Or Functional Problems">
+					description = <"*">
+				>
+				["at0103"] = <
+					text = <"Chronic Kidney Disease Details Stage">
+					description = <"*">
+				>
+				["at0104"] = <
+					text = <"Stage 1 CKD">
+					description = <"*">
+				>
+				["at0105"] = <
+					text = <"Stage 2 CKD">
+					description = <"*">
+				>
+				["at0106"] = <
+					text = <"Stage 3A CKD">
+					description = <"*">
+				>
+				["at0107"] = <
+					text = <"Stage 3B CKD">
+					description = <"*">
+				>
+				["at0108"] = <
+					text = <"Stage 4 CKD">
+					description = <"*">
+				>
+				["at0109"] = <
+					text = <"Stage 5 CKD">
+					description = <"*">
+				>
+				["at0110"] = <
+					text = <"Child-Pugh score">
+					description = <"*">
+				>
+				["at0111"] = <
+					text = <"MELD score">
+					description = <"*">
+				>
+			>
+		>
+	>

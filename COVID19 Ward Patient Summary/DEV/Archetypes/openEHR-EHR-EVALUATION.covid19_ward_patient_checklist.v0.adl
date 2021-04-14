@@ -1,0 +1,530 @@
+archetype (adl_version=1.4; uid=8bb923c9-737a-4081-a9f1-26813ef3c9c1)
+	openEHR-EHR-EVALUATION.covid19_ward_patient_checklist.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2020-03-26">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"b5b8a17d813ee8de0f401ac30248213b">
+		["build_uid"] = <"bcc6d5bf-03ad-3720-bf72-a7b32effcdc8">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- COVID19 Ward Patient Checklist
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0018] matches {    -- Assessment Date
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					CLUSTER[at0021] occurrences matches {0..1} matches {    -- Daily Review
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0025] matches {    -- Symptomatic change
+								value matches {
+									1|[local::at0026],
+									2|[local::at0027],
+									3|[local::at0028]
+								}
+							}
+							ELEMENT[at0060] occurrences matches {0..1} matches {    -- Has the daily fluid balance been reviewed?
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0069,    -- Yes
+											at0070,    -- No
+											at0077]    -- N/A
+										}
+									}
+								}
+							}
+							ELEMENT[at0061] occurrences matches {0..1} matches {    -- Is ICU team review needed today?
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0071,    -- Yes
+											at0072,    -- No
+											at0078]    -- N/A
+										}
+									}
+								}
+							}
+							ELEMENT[at0044] occurrences matches {0..1} matches {    -- Clinical COVID infection status
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0056,    -- Infectious
+											at0057,    -- No longer infectious
+											at0058,    -- Unknown
+											at0059]    -- N/A
+										}
+									}
+								}
+							}
+							ELEMENT[at0052] occurrences matches {0..1} matches {    -- Has the patient (or appropriate relative) been informed of the latest COVID test status
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0053,    -- Yes
+											at0054,    -- No
+											at0055]    -- N/A
+										}
+									}
+								}
+							}
+							ELEMENT[at0048] occurrences matches {0..1} matches {    -- Further COVID testing indicated?
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0049,    -- Yes
+											at0050,    -- No
+											at0051]    -- N/A
+										}
+									}
+								}
+							}
+							ELEMENT[at0062] occurrences matches {0..1} matches {    -- Is the patient able to communicate with relatives by themselves?
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0073,    -- Yes
+											at0074,    -- No
+											at0079]    -- N/A
+										}
+									}
+								}
+							}
+							ELEMENT[at0063] occurrences matches {0..1} matches {    -- When was the last communication between family and healthcare worker?
+								value matches {
+									DV_DATE matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0023] occurrences matches {0..1} matches {    -- COVID Assessment
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0043] occurrences matches {0..1} matches {    -- First Symptom Onset
+								value matches {
+									DV_DATE matches {*}
+								}
+							}
+							ELEMENT[at0030] occurrences matches {0..*} matches {    -- COVID Symptoms
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0031] occurrences matches {0..1} matches {    -- Contact with a confirmed or probable case of COVID infection?
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0032,    -- Yes
+											at0033,    -- No
+											at0034]    -- Unknown
+										}
+									}
+								}
+							}
+							ELEMENT[at0035] matches {    -- X-Ray or CT changes compatible with COVID
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0036,    -- Yes
+											at0037,    -- Possible
+											at0038,    -- No
+											at0039]    -- N/A
+										}
+									}
+								}
+							}
+							ELEMENT[at0040] matches {    -- Clinical Diagnosis of COVID
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0041,    -- Yes
+											at0042]    -- No
+										}
+									}
+								}
+							}
+							ELEMENT[at0065] occurrences matches {0..1} matches {    -- Is the patient involved in a trial?
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0066,    -- Yes
+											at0067]    -- No
+										}
+									}
+								}
+							}
+							ELEMENT[at0068] occurrences matches {0..1} matches {    -- Are they eligible for trial enrolment?
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0075,    -- Yes
+											at0076]    -- No
+										}
+									}
+								}
+							}
+						}
+					}
+					CLUSTER[at0019] occurrences matches {0..1} matches {    -- Assessment Status
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0004] matches {    -- VTE Assessment Completed
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0005] matches {    -- TEP Assessment Completed
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0006] occurrences matches {0..1} matches {    -- Treatment Escalation
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0009] occurrences matches {0..1} matches {    -- For escalation to ITU/HDU
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0014,    -- Yes
+											at0015,    -- No
+											at0016]    -- Unknown
+										}
+									}
+								}
+							}
+							ELEMENT[at0010] occurrences matches {0..1} matches {    -- For resuscitation
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0011,    -- Yes
+											at0012,    -- No
+											at0013]    -- Unknown
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0017] matches {*}    -- Item tree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"COVID19 Ward Patient Checklist">
+					description = <"COVID19 Ward Patient Checklist">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"VTE Assessment Completed">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"TEP Assessment Completed">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Treatment Escalation">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"For escalation to ITU/HDU">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"For resuscitation">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Unknown">
+					description = <"Unknown /  Not Documented">
+				>
+				["at0014"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Unknown">
+					description = <"Unkown / Not Documented">
+				>
+				["at0017"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0018"] = <
+					text = <"Assessment Date">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Assessment Status">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Daily Review">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"COVID Assessment">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Symptomatic change">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Better">
+					description = <"Symptoms have improved">
+				>
+				["at0027"] = <
+					text = <"Same">
+					description = <"Symptoms have not changed">
+				>
+				["at0028"] = <
+					text = <"Worse">
+					description = <"Symptoms have got worse">
+				>
+				["at0030"] = <
+					text = <"COVID Symptoms">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Contact with a confirmed or probable case of COVID infection?">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Unknown">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"X-Ray or CT changes compatible with COVID">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Possible">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"N/A">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Clinical Diagnosis of COVID">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"First Symptom Onset">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Clinical COVID infection status">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Further COVID testing indicated?">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"N/A">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Has the patient (or appropriate relative) been informed of the latest COVID test status">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"N/A">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Infectious">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"No longer infectious">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Unknown">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"N/A">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Has the daily fluid balance been reviewed?">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Is ICU team review needed today?">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"Is the patient able to communicate with relatives by themselves?">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"When was the last communication between family and healthcare worker?">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"Is the patient involved in a trial?">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0067"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"Are they eligible for trial enrolment?">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"N/A">
+					description = <"*">
+				>
+				["at0078"] = <
+					text = <"N/A">
+					description = <"*">
+				>
+				["at0079"] = <
+					text = <"N/A">
+					description = <"*">
+				>
+			>
+		>
+	>
